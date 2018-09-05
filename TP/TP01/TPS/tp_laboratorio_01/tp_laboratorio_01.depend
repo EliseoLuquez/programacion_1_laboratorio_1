@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1536116841 source:c:\users\eli\documents\utn\tp_laboratorio_01\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Luquez.h"
+
+1536116677 source:c:\users\eli\documents\utn\tp_laboratorio_01\luquez.c
+	"Luquez.h"
+	<stdio.h>
+
+1536116171 c:\users\eli\documents\utn\tp_laboratorio_01\luquez.h
+
