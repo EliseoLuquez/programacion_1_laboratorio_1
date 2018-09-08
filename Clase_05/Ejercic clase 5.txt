@@ -1,0 +1,54 @@
+#include stdio.h
+#include stdlib.h
+#include ctype.h
+
+#define TAM 5
+
+void mostrarVector( int x[], int tam);
+
+int main()
+{
+
+    int vec[TAM];
+    char seguir;
+    int numero;
+    int indice;
+
+    for(int i=0; i  TAM; i++)
+    {
+        vec[i] = 0;
+    }
+
+    do
+    {
+
+        printf(Ingrese un numero );
+        scanf(%d, &numero);
+
+        printf(Ingrese indice );
+        scanf(%d, &indice);
+
+        vec[indice] = numero;
+
+        printf(Desea continuar );
+        fflush(stdin);
+        scanf(%c, &seguir);
+        seguir = tolower(seguir);
+    }
+    while( seguir == 's');
+
+    mostrarVector(vec, TAM);
+
+    return 0;
+}
+
+void mostrarVector( int x[], int tam)
+{
+
+    for(int i=0; i  tam; i++)
+    {
+        printf( %d, x[i]);
+
+    }
+    printf(nn);
+}
