@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1536626646 source:d:\luquez\programacion_1_laboratorio_1\clase_06\clase 6 ej02\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
