@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1537232473 source:d:\luquez\programacion_1_laboratorio_1\clase_08\ejercicio\clase08ej01\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Alumno.h"
+	<string.h>
+
+1537232338 source:d:\luquez\programacion_1_laboratorio_1\clase_08\ejercicio\clase08ej01\alumno.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Alumno.h"
+
+1537232547 d:\luquez\programacion_1_laboratorio_1\clase_08\ejercicio\clase08ej01\alumno.h
+
