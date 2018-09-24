@@ -26,18 +26,42 @@ sAlumno pedirAlumno()
    return alumnito;
 }
 
-void cargarListadoDeAlumnos(sAlumno  listado[], int tam)
+int buscarLibre(sAlumno listado[], int tam)
 {
-    for(int i = 0; i < tam; i++)
+    int i;
+    int flag = -1;
+    for(i = 0; i < tam; i++)
     {
-        listado[i]=pedirAlumno();
+        if(listado[i].estado==VACIO)
+        {
+           flag = i;
+           break;
+        }
+
     }
+    return flag;
+}
+int cargarListadoDeAlumnos(sAlumno  listado[], int tam)
+{
+    int index;
+    int flag = 0;
+    index=buscarLibre(listado, tam);
+    if(index!=-1)
+    {
+        listado[index]=pedirAlumno();
+        listado[index].estado=OCUPADO;
+    }
+    return index;
 }
  void mostrarListadoDeAlumnos(sAlumno listado[], int tam)
  {
     for(int i = 0; i < tam; i++)
     {
-        mostrarUnAlumno(listado[i]);
+        if(listado[i].estado == OCUPADO)
+        {
+            mostrarUnAlumno(listado[i]);
+
+        }
     }
  }
 
@@ -68,4 +92,6 @@ void cargarListadoDeAlumnos(sAlumno  listado[], int tam)
      }
 
  }
+
+
 
