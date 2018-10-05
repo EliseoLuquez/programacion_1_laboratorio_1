@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1538711048 source:c:\users\eliseo\documents\utn\proyectotp02\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"prototipo.h"
+
+1538711195 c:\users\eliseo\documents\utn\proyectotp02\prototipo.h
+
+1538713154 source:c:\users\eliseo\documents\utn\proyectotp02\prototipo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"prototipo.h"
+
