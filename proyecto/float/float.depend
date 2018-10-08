@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1539005057 source:c:\documents and settings\yamila\mis documentos\downloads\cursoingresojs-master\programacion_1_laboratorio_1-master\float\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
