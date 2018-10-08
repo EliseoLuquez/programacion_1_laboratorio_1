@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1538962389 source:c:\users\romy\documents\eliseo\proyecto\main.c
+	<stdio.h>
+	<stdlib.h>
+	"proyecto.h"
+
+1538960702 c:\users\romy\documents\eliseo\proyecto\proyecto.h
+
+1538962291 source:c:\users\romy\documents\eliseo\proyecto\proyecto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"proyecto.h"
+
