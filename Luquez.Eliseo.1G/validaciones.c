@@ -125,6 +125,80 @@ int addCliente(sCliente* list, int len)
     }
     return r;
 }
+
+int sortCliente(sCliente* list, int len, int order)
+{
+    sCliente auxCliente;
+    int i, j;
+    for(i = 0; i < len-1; i++)
+    {
+        for(j = i+1; j < len; j++)
+        {
+           if(order == 1)
+            { /** ascendente **/
+            if(((strcmp(list[i].sexo, list[j].sexo)>0))&&(list[i].nombreCliente > list[j].nombreCliente))
+            {
+                auxCliente = list[j];
+                list[j] = list[i];
+                list[i] = auxCliente;
+            }
+            }
+            else if(order == 0) /** decendente**/
+            {
+                if(((strcmp(list[i].sexo, list[j].sexo)<0))&&(list[i].nombreCliente < list[j].nombreCliente))
+            {
+                auxCliente = list[j];
+                list[j] = list[i];
+                list[i] = auxCliente;
+
+            }
+            }
+
+        }
+    }
+    return 0;
+}
+
+
+int removeCliente(sCliente* list, int len)
+{
+    int r = -1;
+    int id;
+    char answer;
+
+    system("cls");
+    printf("***  Baja Empleado  ***\n\n");
+
+    printf("Ingrese id: ");
+    scanf("%d", &id);
+    r = findClienteById(list, len, id);
+
+    if(r == -1)
+    {
+        printf("No hay clientes con ese codigo %d\n\n", id);
+        system("pause");
+    }
+    else
+    {   printCliente(sCliente);
+        printf("Confirma baja s/n : ");
+        fflush(stdin);
+        scanf("%c", &answer);
+
+        if(answer == 'n')
+        {
+            printf("\nBaja cancelada");
+        }
+        else
+        {
+            list[r].isEmptyCliente = -1; /** SE LE ASIGNA EL VALOR 1 PARA CAMBAIR SU ESTA DE LLENO(0)A VACIO**/
+            printf("Baja exitosa\n\n");
+        }
+    system("pause");
+    }
+    return 0;
+}
+
+
 void printCliente(sCliente list)
 {
     printf("\nCOD.CLIENTE:%d - NOMBRE:%s - SEXO:%s - TELEFONO:%s -  \n\n", list.codigoCliente, list.nombreCliente, list.telefono);
@@ -178,7 +252,7 @@ void modifyCliente(sCliente* list, int len)
     printf("Ingrese id: ");
     scanf("%d", &id);
 
-    index = findEmployeeById(list, len, id);
+    index = findClienteById(list, len, id);
 
     if(index == -1)
     {
@@ -247,7 +321,7 @@ void modifyCliente(sCliente* list, int len)
                         printf("Ingrese nuevo telefono: \n");
                         fflush(stdin);
                         gets(newTelefono);
-                        list[index].telefono = newTelefono;
+                        strcpy(list[index].telefono, newTelefono);
 
                         printf("\nModificacion de telefono exitosa\n\n");
                     }
@@ -352,7 +426,7 @@ int esSoloLetrasFM(char* str)
    int i=0;
    while(str[i] != '\0')
    {
-       if((str[i] != ' ') && (str[i] != 'f') ||(str[i] != 'm') && (str[i] != 'F') || (str[i] != 'M'))
+       if((str[i] == 'f') ||(str[i] == 'm') || (str[i] == 'F') || (str[i] == 'M'))
            return 0;
        i++;
    }
@@ -447,7 +521,7 @@ int validarNumeroFlotante(char str[])
    return 1;
 }
 
-int getStringNumerosFlotantes(char mensaje[],char input[])
+/**int getStringNumerosFlotantes(char mensaje[],char input[])
 {
     char aux[256];
     funcion_getString(mensaje,aux);
@@ -458,7 +532,7 @@ int getStringNumerosFlotantes(char mensaje[],char input[])
     }
     return 0;
 }
-
+**/
 void harcodeoCliente(sCliente* list)
 {
 

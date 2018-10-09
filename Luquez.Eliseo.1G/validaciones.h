@@ -56,6 +56,8 @@ void printCliente(sCliente list);
 void printClientes(sCliente* list, int len);
 int findClienteById(sCliente* list, int len, int id);
 void modifyCliente(sCliente* list, int len);
+int removeCliente(sCliente* list, int len);
+int sortCliente(sCliente* list, int len, int order);
 
 void getString(char* message, char* input);
 char getChar(char* message);

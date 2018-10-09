@@ -1,9 +1,15 @@
 # depslib dependency file v1.0
-1539042839 source:d:\luquez\luquez.eliseo.1g\main.c
+1539044219 source:d:\luquez\luquez.eliseo.1g\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"validaciones.h"
 
-1539042799 d:\luquez\luquez.eliseo.1g\validaciones.h
+1539044147 d:\luquez\luquez.eliseo.1g\validaciones.h
+
+1539044147 source:d:\luquez\luquez.eliseo.1g\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
 

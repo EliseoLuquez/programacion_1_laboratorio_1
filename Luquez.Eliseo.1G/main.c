@@ -16,6 +16,7 @@ int main()
     int primerCliente = 0;
 
     initCliente(clientes, TAM_CLIENTE);
+    harcodeoCliente(clientes);
     char exit = 'n';
     do{
         switch(options())
@@ -26,6 +27,12 @@ int main()
                     break;
             case 2:
                     modifyCliente(clientes, TAM_CLIENTE);
+                    break;
+            case 3:
+                    removeCliente(clientes, TAM_CLIENTE);
+                    break;
+            case 4:
+                    sortCliente(clientes, TAM_CLIENTE, 0);
                     break;
 
 
