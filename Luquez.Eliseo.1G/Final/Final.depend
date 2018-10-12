@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1539376515 source:c:\users\eli\documents\utn\final\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
+1539376451 c:\users\eli\documents\utn\final\funciones.h
+
+1539376515 source:c:\users\eli\documents\utn\final\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
+1539376634 source:c:\users\eli\documents\utn\final\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
+1539376634 c:\users\eli\documents\utn\final\juegos.h
+
+1539372506 c:\users\eli\documents\utn\final\alquileres.h
+
+1539376515 source:c:\users\eli\documents\utn\final\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
+1539376451 c:\users\eli\documents\utn\final\clientes.h
+
+1539376515 source:c:\users\eli\documents\utn\final\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
