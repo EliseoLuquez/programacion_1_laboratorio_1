@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1539384843 source:d:\luquez\luquez.eliseo.1g\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
+1539385675 d:\luquez\luquez.eliseo.1g\funciones.h
+
+1539385708 d:\luquez\luquez.eliseo.1g\juegos.h
+
+1539383176 d:\luquez\luquez.eliseo.1g\alquileres.h
+
+1539383220 d:\luquez\luquez.eliseo.1g\clientes.h
+
+1539383176 source:d:\luquez\luquez.eliseo.1g\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
+1539384843 source:d:\luquez\luquez.eliseo.1g\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
+1539384077 source:d:\luquez\luquez.eliseo.1g\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
+1539384874 source:d:\luquez\luquez.eliseo.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
