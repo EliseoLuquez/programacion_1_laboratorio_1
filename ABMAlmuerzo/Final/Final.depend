@@ -52,3 +52,56 @@
 	"Alquileres.h"
 	"Clientes.h"
 
+1542061455 source:d:\luquez\programacion_1_laboratorio_1-master\abmalmuerzo\final\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
+1542061455 d:\luquez\programacion_1_laboratorio_1-master\abmalmuerzo\final\funciones.h
+
+1542064223 d:\luquez\programacion_1_laboratorio_1-master\abmalmuerzo\final\juegos.h
+
+1542052925 d:\luquez\programacion_1_laboratorio_1-master\abmalmuerzo\final\alquileres.h
+
+1542052925 d:\luquez\programacion_1_laboratorio_1-master\abmalmuerzo\final\clientes.h
+
+1542052925 source:d:\luquez\programacion_1_laboratorio_1-master\abmalmuerzo\final\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
+1542063618 source:d:\luquez\programacion_1_laboratorio_1-master\abmalmuerzo\final\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
+1542064964 source:d:\luquez\programacion_1_laboratorio_1-master\abmalmuerzo\final\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+
+1542064223 source:d:\luquez\programacion_1_laboratorio_1-master\abmalmuerzo\final\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"Juegos.h"
+	"Alquileres.h"
+	"Clientes.h"
+

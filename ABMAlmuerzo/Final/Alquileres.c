@@ -30,7 +30,7 @@ int searchEmptyAlq(sAlquiler lista[], int tam)
 
 int altaAlq(sAlquiler listAlq[], int tamAlq, sCliente listCli[], int tamCli, sJuego listJuego[], int tamJue)
 {
-    int idAlquiler = -1;
+    int idAlquiler = 0;
     int idJuegoAux;
     int idClienteAux;
     sAlquiler nuevoAlquiler;
@@ -84,9 +84,9 @@ int altaAlq(sAlquiler listAlq[], int tamAlq, sCliente listCli[], int tamCli, sJu
             scanf("%d",&nuevoAlquiler.fecha.anio);
 
             nuevoAlquiler.isEmpty = 0;
+            nuevoAlquiler.id = idAlquiler+1;
             listAlq[indice] = nuevoAlquiler;
 
-            nuevoAlquiler.id = idAlquiler++;
             return 1;
         }
     }
@@ -128,11 +128,11 @@ void mostrarAlquileres(sAlquiler alq[], int tamAlq, sJuego juego[], int tamJue, 
 {
         sAlquiler Alquiler [] =
         {
-            { 100 , 2 , 2 , { 12 , 10 , 2018 }},
-            { 102 , 3 , 3 , { 11 , 9 , 2018 }},
-            { 103 , 1 , 4 , { 12 , 1 , 2018 }},
-            { 104 , 1 , 0 , { 9 , 2 , 2018 }},
-            { 105 , 4 , 1 , { 1 , 1 , 2018 }}
+            { 100, 2, 2 , { 12 , 10 , 2018 }},
+            { 102, 3, 3 , { 11 , 9 , 2018 }},
+            { 103, 1, 4 , { 12 , 1 , 2018 }},
+            { 104, 1, 0 , { 9 , 2 , 2018 }},
+            { 105, 4, 1 , { 1 , 1 , 2018 }}
         };
 
         for( int i = 0; i < 5;i++)

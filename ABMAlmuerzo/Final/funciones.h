@@ -7,6 +7,13 @@ typedef struct
     }sFecha;
 
 typedef struct
+{
+    int id;
+    char descripcion[51];
+
+}sMarca;
+
+typedef struct
     {
         int id;
         char descripcion[51];
@@ -19,6 +26,7 @@ typedef struct
         char descripcion[51];
         float importe;
         int codCategoria;
+        int codMarca;
         int isEmpty;
 
     }sJuego;

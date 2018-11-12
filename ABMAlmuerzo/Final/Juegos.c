@@ -23,7 +23,25 @@ void inicializarCat(sCategoria lista[], int tam)
     }
 }
 
+void inicializarMarca(sMarca marcas[], int tam)
+{
+    for(int i = 0; i < tam; i++)
+    {
+        marcas[i].id= 0;
+        strcpy(marcas[i].descripcion,"");
+    }
+}
 
+void listarMarcas(sMarca marcas[], int tam)
+{
+    printf("\nLista de Marcas\n\n");
+
+    for(int i=0; i < tam; i++)
+    {
+        printf(" %d  %10s\n",marcas[i].id, marcas[i].descripcion);
+    }
+    printf("\n\n");
+}
 
 //LISTAR ALGO
 void listarCategorias(sCategoria cat[], int tam)
@@ -43,7 +61,7 @@ void listarJuegos(sJuego jue[], int tamj)
 
     for(int i=0; i < tamj; i++)
     {
-        printf(" %d  %10s\n",jue[i].id, jue[i].descripcion);
+        printf("%d  %s\n",jue[i].id, jue[i].descripcion);
     }
     printf("\n\n");
 }
@@ -90,6 +108,46 @@ int obtenerIdCategoria(sCategoria cat[], int tamCat, int indice)
     return id;
 }
 
+int obtenerIdMarca(sMarca marcas[], int tamMarca, int indice)
+{
+    int id;
+
+    for(int i = 0; i < tamMarca; i++)
+    {
+        if(i == indice)
+        {
+            id = marcas[i].id;
+        }
+    }
+
+    return id;
+}
+
+
+int obtenerMarca(sMarca marcas[], int tamMarca, sJuego juego[], int tamJue, int idJue, char desc[])
+{
+    int flag = 1;
+
+    for(int i = 0; i < tamJue; i++)
+    {
+        if(juego[i].id == idJue)
+        {
+            for(int j = 0; j < tamMarca; j++)
+            {
+                if(marcas[j].id == juego[i].codMarca)
+                {
+                    strcpy(desc, marcas[j].descripcion);
+                    flag = 0;
+                    break;
+                }
+            }
+            if(flag == 0)
+            {
+                break;
+            }
+        }
+    }
+}
 
 int obtenerCategoria(sCategoria listaCat[], int tamCat,sJuego juego[], int tamJue, int idJue, char desc[])
 {
@@ -116,23 +174,23 @@ int obtenerCategoria(sCategoria listaCat[], int tamCat,sJuego juego[], int tamJu
     }
 }
 
-void harcodeoJuegos(sJuego listaJ[], int tamj, sCategoria listaCat[], int tamc)
+void harcodeoJuegos(sJuego listaJ[], int tamj, sCategoria listaCat[], int tamc, sMarca marcas[], int tamMarca)
 {
     sJuego juegos[] =
     {
-        {100, "Monopoly", 210.56, obtenerIdCategoria(listaCat, tamc, 0)},
-        {101, "PES", 311.77, obtenerIdCategoria(listaCat, tamc, 1)},
-        {102, "Poker", 215.97, obtenerIdCategoria(listaCat, tamc, 2)},
-        {103, "Sims", 877.12, obtenerIdCategoria(listaCat, tamc, 3)},
-        {104, "Ludo", 210.56, obtenerIdCategoria(listaCat, tamc, 0)},
-        {105, "FIFA", 311.77, obtenerIdCategoria(listaCat, tamc, 1)},
-        {106, "Truco", 215.97, obtenerIdCategoria(listaCat, tamc, 2)},
-        {107, "Battlefield", 877.12, obtenerIdCategoria(listaCat, tamc, 3)},
-        {108, "Life", 210.56, obtenerIdCategoria(listaCat, tamc, 0)},
-        {109, "NHL", 311.77, obtenerIdCategoria(listaCat, tamc, 1)},
-        {110, "Canasta", 215.97, obtenerIdCategoria(listaCat, tamc, 2)},
-        {111, "LOL", 877.12, obtenerIdCategoria(listaCat, tamc, 3)},
-        {112, "GOW", 500.01, obtenerIdCategoria(listaCat, tamc, 1)}
+        {100, "Monopoly", 210.56, obtenerIdCategoria(listaCat, tamc, 0),obtenerIdMarca(marcas, tamMarca, 1)},
+        {101, "PES", 311.77, obtenerIdCategoria(listaCat, tamc, 1),obtenerIdMarca(marcas, tamMarca, 2)},
+        {102, "Poker", 215.97, obtenerIdCategoria(listaCat, tamc, 2),obtenerIdMarca(marcas, tamMarca, 3)},
+        {103, "Sims", 877.12, obtenerIdCategoria(listaCat, tamc, 3),obtenerIdMarca(marcas, tamMarca, 4)},
+        {104, "Ludo", 210.56, obtenerIdCategoria(listaCat, tamc, 0),obtenerIdMarca(marcas, tamMarca, 5)},
+        {105, "FIFA", 311.77, obtenerIdCategoria(listaCat, tamc, 1),obtenerIdMarca(marcas, tamMarca, 1)},
+        {106, "Truco", 215.97, obtenerIdCategoria(listaCat, tamc, 2),obtenerIdMarca(marcas, tamMarca, 2)},
+        {107, "Battlefield", 877.12, obtenerIdCategoria(listaCat, tamc, 3),obtenerIdMarca(marcas, tamMarca, 3)},
+        {108, "Life", 210.56, obtenerIdCategoria(listaCat, tamc, 0),obtenerIdMarca(marcas, tamMarca, 4)},
+        {109, "NHL", 311.77, obtenerIdCategoria(listaCat, tamc, 1),obtenerIdMarca(marcas, tamMarca, 5)},
+        {110, "Canasta", 215.97, obtenerIdCategoria(listaCat, tamc, 2),obtenerIdMarca(marcas, tamMarca, 1)},
+        {111, "LOL", 877.12, obtenerIdCategoria(listaCat, tamc, 3),obtenerIdMarca(marcas, tamMarca, 2)},
+        {112, "GOW", 500.01, obtenerIdCategoria(listaCat, tamc, 1),obtenerIdMarca(marcas, tamMarca, 3)}
     };
 
     for(int i = 0; i < tamj; i++)
@@ -141,6 +199,22 @@ void harcodeoJuegos(sJuego listaJ[], int tamj, sCategoria listaCat[], int tamc)
     }
 }
 
+void harcodeoMarcas(sMarca marcas[])
+{
+    sMarca mar[]=
+    {
+        {1, "Ditoys"},
+        {2, "Vulcanita"},
+        {3, "Yetem"},
+        {4, "Ruibal"},
+        {5, "TopToys"}
+    };
+
+    for(int i=0; i < 5; i++)
+    {
+        marcas[i] = mar[i];
+    }
+}
 
 void harcodeoCategorias(sCategoria categ[], int tamC)
 {
@@ -226,4 +300,47 @@ void mostrarJuegosSinAlq(sJuego juegos[], int tamJue, sAlquiler alquileres[], in
     {
         printf("No hay clientes cargados");
     }
+}
+
+void mostrarJuegosXMarca(sJuego jue[], int tamj, sMarca marcas[], int tamMar)
+{
+     int idMar;
+     char descripcion[20];
+     int idJue;
+     int flag = 0;
+
+     system("cls");
+     printf("  *** Listado de Categorias ***\n\n");
+
+     listarMarcas(marcas, tamMar);
+     printf("Ingrese id Categoria: ");
+     scanf("%d",&idMar);
+
+     //obtenerJuego(jue, tamj, idJue, descripcion);
+
+     system("cls");
+     printf("\n--------------------JUEGOS---------------------\n");
+     printf("\nID            Descripcion             Categoria\n\n");
+
+     for(int i=0; i< tamMar; i++)
+     {
+         if(marcas[i].id == idMar)
+         {
+             for(int j = 0; j < tamj; j++)
+             {
+                 if(jue[j].codMarca == idMar)
+                 {
+                     fflush(stdin);
+                     printf("%d %20s %20s\n", jue[j].id, jue[j].descripcion, marcas[i].descripcion);
+                     flag = 1;
+                 }
+             }
+         }
+     }
+     printf("\n\n");
+
+     if(flag == 0)
+     {
+         printf("No hay Juegos que mostrar\n\n");
+     }
 }

@@ -5,10 +5,11 @@
 #include "Juegos.h"
 #include "Alquileres.h"
 #include "Clientes.h"
-#define TAM_JUEGO 15
+#define TAM_JUEGO 13
 #define TAM_CLIENTE 10
 #define TAM_ALQ 10
 #define TAM_CAT 4
+#define TAM_MARC 5
 
 int main()
 {
@@ -19,16 +20,19 @@ int main()
     sCliente clientes[TAM_CLIENTE];
     sAlquiler alquileres[TAM_ALQ];
     sJuego juegos[TAM_JUEGO];
+    sMarca marcas[TAM_MARC];
 
     inicializarClientes(clientes, TAM_CLIENTE);
     inicilizarAlq(alquileres, TAM_ALQ);
     inicializarJuego(juegos, TAM_JUEGO);
     inicializarCat(categorias, TAM_CAT);
+    inicializarMarca(marcas, TAM_MARC);
 
     harcodeoClientes(clientes);
     harcodeoCategorias(categorias, TAM_CAT);
-    harcodeoJuegos(juegos, TAM_JUEGO, categorias, TAM_CAT);
+    harcodeoJuegos(juegos, TAM_JUEGO, categorias, TAM_CAT,marcas, TAM_MARC );
     hardCordeoAlquileres(alquileres);
+    harcodeoMarcas(marcas);
 
     do
     {
@@ -60,31 +64,35 @@ int main()
             system("pause");
             break;
         case 8:
-            listarJuegos(juegos, TAM_JUEGO);
+            listarMarcas(marcas, TAM_MARC);
             system("pause");
             break;
         case 9:
-            mostrarJuegosXCategoria(juegos, TAM_JUEGO, categorias, TAM_CAT);
+            listarJuegos(juegos, TAM_JUEGO);
             system("pause");
             break;
         case 10:
-            mostrarAlquileresXCliente(alquileres, TAM_ALQ, juegos, TAM_JUEGO, clientes, TAM_CLIENTE, categorias, TAM_CAT);
+            mostrarJuegosXCategoria(juegos, TAM_JUEGO, categorias, TAM_CAT);
             system("pause");
             break;
         case 11:
-            mostrarTotalAlquileresXCliente(alquileres, TAM_ALQ, juegos, TAM_JUEGO, clientes, TAM_CLIENTE);
+            mostrarAlquileresXCliente(alquileres, TAM_ALQ, juegos, TAM_JUEGO, clientes, TAM_CLIENTE, categorias, TAM_CAT);
             system("pause");
             break;
         case 12:
-            mostrarClientesSinAlq(clientes, TAM_CLIENTE, alquileres, TAM_ALQ);
+            mostrarTotalAlquileresXCliente(alquileres, TAM_ALQ, juegos, TAM_JUEGO, clientes, TAM_CLIENTE);
             system("pause");
             break;
         case 13:
-            mostrarJuegosSinAlq(juegos, TAM_JUEGO, alquileres, TAM_ALQ);
+            mostrarClientesSinAlq(clientes, TAM_CLIENTE, alquileres, TAM_ALQ);
             system("pause");
             break;
         case 14:
-            //mostrarClientesSinAlq(clientes, TAM_CLIENTE, alquileres, TAM_ALQ);
+            mostrarJuegosSinAlq(juegos, TAM_JUEGO, alquileres, TAM_ALQ);
+            system("pause");
+            break;
+        case 15:
+            mostrarJuegosXMarca(juegos, TAM_JUEGO, marcas, TAM_MARC);
             system("pause");
             break;
         case 20:
