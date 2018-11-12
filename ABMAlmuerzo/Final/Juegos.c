@@ -158,6 +158,7 @@ void harcodeoCategorias(sCategoria categ[], int tamC)
     }
 }
 
+
 void mostrarJuegosXCategoria(sJuego jue[], int tamj, sCategoria cat[], int tamCat)
 {
      int idCat;
@@ -199,4 +200,30 @@ void mostrarJuegosXCategoria(sJuego jue[], int tamj, sCategoria cat[], int tamCa
      {
          printf("No hay Juegos que mostrar\n\n");
      }
+}
+
+
+void mostrarJuegosSinAlq(sJuego juegos[], int tamJue, sAlquiler alquileres[], int tamAlq)
+{
+    int flag = 0;
+    system("cls");
+    printf("\nId  Juego\n\n");
+
+    for(int i = 0; i < tamJue; i++)
+    {
+        if(juegos[i].isEmpty == 0)
+        {
+            for(int j = 0; j < tamAlq; j++)
+            {
+                if(juegos[i].id != alquileres[j].idJuego)
+                printf("%d %s\n", juegos[i].id, juegos[i].descripcion);
+                flag = 1;
+                break;
+            }
+        }
+    }
+    if(flag == 0)
+    {
+        printf("No hay clientes cargados");
+    }
 }

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1541992648 source:c:\users\eli\documents\utn\final\main.c
+1542052365 source:c:\users\eli\documents\utn\final\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -10,7 +10,7 @@
 
 1541986328 c:\users\eli\documents\utn\final\funciones.h
 
-1541991671 source:c:\users\eli\documents\utn\final\funciones.c
+1542052325 source:c:\users\eli\documents\utn\final\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -19,7 +19,7 @@
 	"Alquileres.h"
 	"Clientes.h"
 
-1541989689 source:c:\users\eli\documents\utn\final\juegos.c
+1542052221 source:c:\users\eli\documents\utn\final\juegos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -28,11 +28,11 @@
 	"Alquileres.h"
 	"Clientes.h"
 
-1541989433 c:\users\eli\documents\utn\final\juegos.h
+1542051980 c:\users\eli\documents\utn\final\juegos.h
 
-1541990855 c:\users\eli\documents\utn\final\alquileres.h
+1542050277 c:\users\eli\documents\utn\final\alquileres.h
 
-1541992354 source:c:\users\eli\documents\utn\final\alquileres.c
+1542051188 source:c:\users\eli\documents\utn\final\alquileres.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -41,9 +41,9 @@
 	"Alquileres.h"
 	"Clientes.h"
 
-1541981784 c:\users\eli\documents\utn\final\clientes.h
+1542051212 c:\users\eli\documents\utn\final\clientes.h
 
-1541992420 source:c:\users\eli\documents\utn\final\clientes.c
+1542051389 source:c:\users\eli\documents\utn\final\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

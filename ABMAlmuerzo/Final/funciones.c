@@ -237,6 +237,9 @@ int menu()
     printf("                 |  8-  Listar Juegos                        |\n");
     printf("                 |  9-  Listar Juegos Categorias             |\n");
     printf("                 | 10-  Listar Alquiler por Cliente          |\n");
+    printf("                 | 11-  Listar Importe Total Alq por Cliente |\n");
+    printf("                 | 12-  Listar Clientes Sin Alquilar         |\n");
+    printf("                 | 13-  Listar Juegos Sin Alquilar           |\n");
     printf("                 | 20-  Salir                                |\n");
     printf("                 |___________________________________________|\n");
     printf("                   Ingrese opcion: ");

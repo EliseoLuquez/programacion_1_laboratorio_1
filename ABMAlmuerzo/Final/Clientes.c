@@ -322,4 +322,29 @@ void obtenerCliente(sCliente cliente[], int tamCli, int idCli, char nombre[])
     }
 }
 
+void mostrarClientesSinAlq(sCliente clientes[], int tam, sAlquiler alquileres[], int tamAlq)
+{
+    int flag = 0;
+    system("cls");
+    printf("\nId   Nombre   Sexo   Telefono  \n\n");
+
+    for(int i = 0; i < tam; i++)
+    {
+        if(clientes[i].isEmpty == 0)
+        {
+            for(int j = 0; j < tamAlq; j++)
+            {
+                if(clientes[i].id != alquileres[j].idCliente)
+                mostrarCliente(clientes[i]);
+                flag = 1;
+                break;
+            }
+        }
+    }
+    if(flag == 0)
+    {
+        printf("No hay clientes cargados");
+    }
+    printf("\n\n");
+}
 

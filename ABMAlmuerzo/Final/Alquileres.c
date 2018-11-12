@@ -28,9 +28,9 @@ int searchEmptyAlq(sAlquiler lista[], int tam)
     return indice;
 }
 
-int altaAlq(sAlquiler listAlq[], int tamAlq, sCliente listCli[], int tamCli, sJuego listJuego[], int tamJue, int* AlqId)
+int altaAlq(sAlquiler listAlq[], int tamAlq, sCliente listCli[], int tamCli, sJuego listJuego[], int tamJue)
 {
-    int idAlquiler = *AlqId;
+    int idAlquiler = -1;
     int idJuegoAux;
     int idClienteAux;
     sAlquiler nuevoAlquiler;
@@ -86,7 +86,7 @@ int altaAlq(sAlquiler listAlq[], int tamAlq, sCliente listCli[], int tamCli, sJu
             nuevoAlquiler.isEmpty = 0;
             listAlq[indice] = nuevoAlquiler;
 
-            *AlqId = idAlquiler + 1;
+            nuevoAlquiler.id = idAlquiler++;
             return 1;
         }
     }
@@ -124,6 +124,22 @@ void mostrarAlquileres(sAlquiler alq[], int tamAlq, sJuego juego[], int tamJue, 
     }
     printf("\n\n");
 }
+ void  hardCordeoAlquileres(sAlquiler alquileres [])
+{
+        sAlquiler Alquiler [] =
+        {
+            { 100 , 2 , 2 , { 12 , 10 , 2018 }},
+            { 102 , 3 , 3 , { 11 , 9 , 2018 }},
+            { 103 , 1 , 4 , { 12 , 1 , 2018 }},
+            { 104 , 1 , 0 , { 9 , 2 , 2018 }},
+            { 105 , 4 , 1 , { 1 , 1 , 2018 }}
+        };
+
+        for( int i = 0; i < 5;i++)
+        {
+            alquileres [i] = Alquiler [i];
+        }
+}
 
 void mostrarAlquileresXCliente(sAlquiler alq[], int tamAlq, sJuego juego[], int tamJue, sCliente cli[], int tamCli, sCategoria cat[], int tamCat)
 {
@@ -135,7 +151,7 @@ void mostrarAlquileresXCliente(sAlquiler alq[], int tamAlq, sJuego juego[], int 
     printf("Ingrese Id Cliente: ");
     fflush(stdin);
     scanf("%d", &idCli);
-    obtenerCliente(cli, tamCli, idCli, nombre);
+    //obtenerCliente(cli, tamCli, idCli, nombre);
 
     system("cls");
     printf("ID Alq     Fecha     Cliente     Juego     Categoria\n\n");
@@ -162,3 +178,44 @@ void mostrarAlquileresXCliente(sAlquiler alq[], int tamAlq, sJuego juego[], int 
     }
     printf("\n\n");
 }
+
+void mostrarTotalAlquileresXCliente(sAlquiler alq[], int tamAlq, sJuego juego[], int tamJue, sCliente cli[], int tamCli)
+{
+    int flag = 0;
+    float total = 0;
+    int idCli;
+
+    mostrarClientes(cli, tamCli);
+    printf("Ingrese Id Cliente: ");
+    fflush(stdin);
+    scanf("%d", &idCli);
+
+    system("cls");
+    fflush(stdin);
+
+    for(int i=0; i < tamAlq; i++)
+    {
+        if(alq[i].idCliente == idCli)
+        {
+            for(int j = 0; j < tamJue;j++)
+            {
+                if(juego[j].id == alq[i].idJuego)
+                {
+                    total += juego[i].importe;
+                    break;
+                }
+            }
+            flag = 1;
+        }
+    }
+    printf("Importe Total: %.2f\n\n", total);
+    system("pause");
+    if(flag == 0)
+    {
+        printf("\nNo hay alquileres cargados del cliente\n");
+    }
+    printf("\n\n");
+}
+
+
+

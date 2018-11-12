@@ -13,7 +13,7 @@
 int main()
 {
     char seguir = 's';
-    int idAlquiler = 0;
+
     fflush(stdin);
     sCategoria categorias[TAM_CAT];
     sCliente clientes[TAM_CLIENTE];
@@ -28,6 +28,7 @@ int main()
     harcodeoClientes(clientes);
     harcodeoCategorias(categorias, TAM_CAT);
     harcodeoJuegos(juegos, TAM_JUEGO, categorias, TAM_CAT);
+    hardCordeoAlquileres(alquileres);
 
     do
     {
@@ -48,7 +49,7 @@ int main()
             system("pause");
             break;
         case 5:
-            altaAlq(alquileres, TAM_ALQ, clientes, TAM_CLIENTE, juegos, TAM_JUEGO, &idAlquiler);
+            altaAlq(alquileres, TAM_ALQ, clientes, TAM_CLIENTE, juegos, TAM_JUEGO);
             break;
         case 6:
             mostrarAlquileres(alquileres, TAM_ALQ, juegos, TAM_JUEGO, clientes, TAM_CLIENTE, categorias, TAM_CAT);
@@ -71,7 +72,19 @@ int main()
             system("pause");
             break;
         case 11:
-          //  mostrarAlmuerzos(almuerzos, 20, comidas, 5, empleados, TAM);
+            mostrarTotalAlquileresXCliente(alquileres, TAM_ALQ, juegos, TAM_JUEGO, clientes, TAM_CLIENTE);
+            system("pause");
+            break;
+        case 12:
+            mostrarClientesSinAlq(clientes, TAM_CLIENTE, alquileres, TAM_ALQ);
+            system("pause");
+            break;
+        case 13:
+            mostrarJuegosSinAlq(juegos, TAM_JUEGO, alquileres, TAM_ALQ);
+            system("pause");
+            break;
+        case 14:
+            //mostrarClientesSinAlq(clientes, TAM_CLIENTE, alquileres, TAM_ALQ);
             system("pause");
             break;
         case 20:
