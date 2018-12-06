@@ -1,0 +1,16 @@
+void inicilizarAlq(sAlquiler lista[], int tam);
+int searchEmptyAlq(sAlquiler lista[], int tam);
+int altaAlq(sAlquiler listAlq[], int tamAlq, sCliente listCli[], int tamCli, sJuego listJuego[], int tamJue);
+void mostrarAlquileres(sAlquiler alq[], int tamAlq, sJuego juego[], int tamJue, sCliente cli[], int tamCli, sCategoria cat[], int tamCat, sMarca marca[], int tamM);
+void mostrarAlquileresXCliente(sAlquiler alq[], int tamAlq, sJuego juego[], int tamJue, sCliente cli[], int tamCli, sCategoria cat[], int tamCa);
+void hardCordeoAlquileres(sAlquiler alquileres[]);
+void mostrarTotalAlquileresXCliente(sAlquiler alq[], int tamAlq, sJuego juego[], int tamJue, sCliente cli[], int tamCli);
+void mostrarTotalAlquileresyPromedio(sAlquiler alq[], int tamAlq, sJuego juego[], int tamJue);
+void alquileres_ClientesQueNoAlquilaron(sAlquiler alq[], int tamAlq, sCliente clientes[], int tamCli);
+void alquileres_JuegosQueNoAlquilaron(sAlquiler alq[], int tamAlq, sJuego juegos[], int tamJue);
+void Alquileres_TelefonoDeAlquilerPorFecha(sCliente cliente[],int tamClie, sAlquiler alquiler[], int tamAlq, sFecha fecha[], sJuego juegos[], int tamJue);
+void alquileres_JuegosAlqPorMujeres(sAlquiler alquiler[], int tamAlq, sCliente cliente[], int tamCli, sJuego juego[], int tamJue);
+void alquileres_JuegosMasAlquiladosPorHombres(sAlquiler alquiler[], int tamAlq, sCliente cliente[], int tamCli, sJuego juego[], int tamJue);
+void alquileres_MostrarAlquileresPorJuego(sAlquiler alq[], int tamAlq, sJuego juego[], int tamJue, sCliente cli[], int tamCli);
+void alquileres_MostrarCantidadDeAlqPorMarca(sAlquiler alquiler[], int tamAlq, sJuego juego[], int tamJue, sMarca marca[], int tamM);
+void alquileres_MostrarAlquileresPorMarca(sAlquiler alq[], int tamAlq, sJuego juego[], int tamJue, sMarca marca[], int tamM, sCliente cli[], int tamCli);
