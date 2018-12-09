@@ -30,8 +30,9 @@ int main()
 {
     int option = 0;
     LinkedList* eVendedor = ll_newLinkedList();
-    LinkedList* eEmpleadoDos = ll_newLinkedList();
+    LinkedList* eVendedorNivel = ll_newLinkedList();
 
+    int nivel;
 
     do{
         option = menuPpal();
@@ -45,16 +46,18 @@ int main()
                 break;
             case 3:
                ll_map(eVendedor, vendedor_loadSueldo);
-                //controller_loadFromBinary("data.csv",eVendedor);
-
                 break;
             case 4:
-                ;
+               eVendedorNivel =  ll_filter(eVendedor, vendedor_niveles);
+               controller_saveAsText("nivel.csv", eVendedorNivel);
                 break;
             case 5:
+                controller_ListEmployee(eVendedorNivel);
+                break;
+            case 6:
                 break;
         }
-    }while(option != 5);
+    }while(option != 6);
     return 0;
 }
 
@@ -67,10 +70,11 @@ int menuPpal()
         printf(" \n");
         printf("  Menu:                                                                          \n");
         printf("  1. Cargar datos                                                                \n");
-        printf("  2. Listar                    \n");
-        printf("  3. calcular comision                                                           \n");
-        printf("  4. elegir nivel                                                 \n");
-        printf(" 10. Salir                                                                       \n");
+        printf("  2. Listar                                                                      \n");
+        printf("  3. Calcular Comision                                                           \n");
+        printf("  4. Elegir nivel                                                                \n");
+        printf("  5. Listar nivel elegido                                                        \n");
+        printf("  6. Salir                                                                       \n");
         printf(" \n");
         scanf("%d", &r);
     }

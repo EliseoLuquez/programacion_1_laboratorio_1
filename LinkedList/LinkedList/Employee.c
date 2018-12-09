@@ -302,4 +302,29 @@ float vendedor_loadSueldo(void* vendedor)
 }
 
 
+int vendedor_niveles(void* vendedor, int* nivel)
+{
+    int retAux = -1;
+    void* filter;
+    if(((Vendedor*)vendedor)->nivel == 0 && nivel == 0)
+    {
+        filter = ((Vendedor*)vendedor);
+        retAux = 0;
+    }
+    else if(((Vendedor*)vendedor)->nivel == 1 && nivel == 1)
+    {
+        filter = ((Vendedor*)vendedor);
+        retAux = 1;
+    }
+    else if(((Vendedor*)vendedor)->nivel == 2 && nivel == 2)
+    {
+        filter = ((Vendedor*)vendedor);
+        retAux = 2;
+    }
+    return retAux;
+}
+
+
+
+
 

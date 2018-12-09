@@ -689,20 +689,31 @@ float ll_map(LinkedList* this, float (*pFunc)(void*))
 }
 
 
-LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*))
+LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*, int* nivel))
 {
     LinkedList* filterList;
     int filterRet;
     void* pElement;
+    int* nivel;
 
     filterList = ll_newLinkedList();
     if(filterList != NULL)
     {
+        printf("Ingrese Nivel de Vendedor 0(Junior), 1(Estandard), 2(Experto): ");
+        scanf("%d", &nivel);
         for(int i = 0; i < ll_len(this);i++)
         {
            pElement = ll_get(this, i);
-           filterRet = pFunc(pElement);
+           filterRet = pFunc(pElement, nivel);
            if(filterRet == 1)
+           {
+               ll_add(filterList, pElement);
+           }
+           else if(filterRet == 0)
+           {
+               ll_add(filterList, pElement);
+           }
+           else if(filterRet == 2)
            {
                ll_add(filterList, pElement);
            }

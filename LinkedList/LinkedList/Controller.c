@@ -325,7 +325,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListVendedor)
     ret = RETURN_ERROR;
 
     FILE* pFile;
-    pFile = fopen("info.csv", "w");
+    pFile = fopen("nivel.csv", "w");
     Vendedor* vend;
 
 
