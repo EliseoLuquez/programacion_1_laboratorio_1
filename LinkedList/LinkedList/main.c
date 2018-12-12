@@ -31,7 +31,9 @@ int main()
     int option = 0;
     LinkedList* eVendedor = ll_newLinkedList();
     LinkedList* eVendedorNivel = ll_newLinkedList();
-
+    char pathArch[20];
+    char pathArch2[20];
+    char pathArchbin[20];
     int nivel;
 
     do{
@@ -39,20 +41,30 @@ int main()
         switch(option)
         {
             case 1:
-                controller_loadFromText("data.csv",eVendedor);
+                system("cls");
+                printf("\nIngrese Nombre de Archivo a cargar: ");
+                scanf("%s", pathArch);
+                controller_loadFromText(pathArch,eVendedor);
                 break;
             case 2:
-               controller_ListEmployee(eVendedor);
+                controller_ListEmployee(eVendedor);
                 break;
             case 3:
-               ll_map(eVendedor, vendedor_loadSueldo);
+                ll_map(eVendedor, vendedor_loadSueldo);
                 break;
             case 4:
-               eVendedorNivel =  ll_filter(eVendedor, vendedor_niveles);
-               controller_saveAsText("nivel.csv", eVendedorNivel);
+                system("cls");
+                eVendedorNivel =  ll_filter(eVendedor, vendedor_niveles);
+                system("cls");
+                printf("\nIngrese Nombre de Archivo segun Nivel elegido: ");
+                scanf("%s", pathArch2);
+                controller_saveAsText(pathArch2, eVendedorNivel);
                 break;
             case 5:
-                controller_ListEmployee(eVendedorNivel);
+                printf("\nIngrese Nombre de Archivo bin segun Nivel elegido: ");
+                scanf("%s", pathArchbin);
+                controller_saveAsBinary(pathArchbin, eVendedorNivel);
+               // controller_ListEmployee(eVendedorNivel);
                 break;
             case 6:
                 break;

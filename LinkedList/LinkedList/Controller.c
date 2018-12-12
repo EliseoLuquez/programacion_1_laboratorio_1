@@ -325,7 +325,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListVendedor)
     ret = RETURN_ERROR;
 
     FILE* pFile;
-    pFile = fopen("nivel.csv", "w");
+    pFile = fopen(path, "w");
     Vendedor* vend;
 
 
@@ -361,7 +361,7 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListVendedor)
     int ret;
     ret = RETURN_ERROR;
     FILE* pFile;
-    pFile = fopen("data.bin", "wb");
+    pFile = fopen(path, "wb");
     Vendedor* vend;
 
     if(ll_len(pArrayListVendedor)!= 0)

@@ -37,4 +37,5 @@ int vendedor_sortBySueldo(void* vendedor, void* empleadoB);
 float vendedor_loadSueldo(void* vendedor);
 int vendedor_niveles(void* vendedor, int* nivel);
 
+
 #endif // employee_H_INCLUDED

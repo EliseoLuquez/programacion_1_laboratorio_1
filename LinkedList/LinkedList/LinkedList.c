@@ -699,7 +699,7 @@ LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*, int* nivel))
     filterList = ll_newLinkedList();
     if(filterList != NULL)
     {
-        printf("Ingrese Nivel de Vendedor 0(Junior), 1(Estandard), 2(Experto): ");
+        printf("\nIngrese Nivel de Vendedor \n\n0-Junior- \n1-Estandard- \n2-Experto- ");
         scanf("%d", &nivel);
         for(int i = 0; i < ll_len(this);i++)
         {
