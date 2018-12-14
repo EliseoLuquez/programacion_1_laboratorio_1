@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1544741091 source:d:\luquez\luquezeliseo1g\controller.c
+	<stdio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Envio.h"
+
+1544745357 d:\luquez\luquezeliseo1g\linkedlist.h
+
+1544741610 d:\luquez\luquezeliseo1g\controller.h
+
+1544743980 d:\luquez\luquezeliseo1g\envio.h
+
+1544745133 source:d:\luquez\luquezeliseo1g\envio.c
+	<stdio.h>
+	"Envio.h"
+
+1544746334 source:d:\luquez\luquezeliseo1g\linkedlist.c
+	<stdio.h>
+	"LinkedList.h"
+	"Envio.h"
+
+1544745333 source:d:\luquez\luquezeliseo1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Envio.h"
+	"Parser.h"
+
+1544741312 d:\luquez\luquezeliseo1g\parser.h
+
+1544741761 source:d:\luquez\luquezeliseo1g\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Envio.h"
+
