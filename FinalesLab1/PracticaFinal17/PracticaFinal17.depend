@@ -1,0 +1,100 @@
+# depslib dependency file v1.0
+1550343088 source:c:\users\eli\documents\utn\practicafinal17\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Usuarios.h"
+	"Temas.h"
+	"parser.h"
+
+1550332047 source:c:\users\eli\documents\utn\practicafinal17\temas.c
+
+1550341976 source:c:\users\eli\documents\utn\practicafinal17\linkedlist.c
+	<stdio.h>
+	"LinkedList.h"
+	"Usuarios.h"
+	"Temas.h"
+
+1550332535 c:\users\eli\documents\utn\practicafinal17\linkedlist.h
+
+1550343585 c:\users\eli\documents\utn\practicafinal17\usuarios.h
+
+1550332055 c:\users\eli\documents\utn\practicafinal17\temas.h
+
+1550344105 source:c:\users\eli\documents\utn\practicafinal17\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Usuarios.h"
+	"Temas.h"
+
+1550343880 source:c:\users\eli\documents\utn\practicafinal17\controller.c
+	<stdio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Usuarios.h"
+	"Temas.h"
+
+1550342314 c:\users\eli\documents\utn\practicafinal17\controller.h
+
+1550343631 source:c:\users\eli\documents\utn\practicafinal17\usuarios.c
+	<stdio.h>
+	"Usuarios.h"
+
+1550343863 c:\users\eli\documents\utn\practicafinal17\parser.h
+
+1550616846 source:f:\practicafinal17\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Usuarios.h"
+	"Temas.h"
+
+1550616752 f:\practicafinal17\linkedlist.h
+
+1550342316 f:\practicafinal17\controller.h
+
+1550608636 f:\practicafinal17\usuarios.h
+
+1550332056 f:\practicafinal17\temas.h
+
+1550617838 source:f:\practicafinal17\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Usuarios.h"
+	"Temas.h"
+
+1550344106 source:f:\practicafinal17\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Usuarios.h"
+	"Temas.h"
+
+1550332048 source:f:\practicafinal17\temas.c
+
+1550616846 source:f:\practicafinal17\usuarios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Usuarios.h"
+
+1550618676 source:f:\practicafinal17\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Usuarios.h"
+	"Temas.h"
+	"parser.h"
+
+1550343864 f:\practicafinal17\parser.h
+
