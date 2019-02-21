@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1550791988 source:d:\luquez\eliseoluquez1g\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Empleado.h"
+
+1550787615 d:\luquez\eliseoluquez1g\linkedlist.h
+
+1550790315 d:\luquez\eliseoluquez1g\controller.h
+
+1550791260 d:\luquez\eliseoluquez1g\empleado.h
+
+1550791979 source:d:\luquez\eliseoluquez1g\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Empleado.h"
+
+1550788241 source:d:\luquez\eliseoluquez1g\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1550791699 source:d:\luquez\eliseoluquez1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Empleado.h"
+	"Parser.h"
+
+1550787615 d:\luquez\eliseoluquez1g\parser.h
+
+1550788425 source:d:\luquez\eliseoluquez1g\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
