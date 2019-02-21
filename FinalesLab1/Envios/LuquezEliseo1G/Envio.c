@@ -15,13 +15,6 @@ Envio* envio_new()/**  **/
         printf("No se pudo encontrar el espacio para liberar o reiniciar el programa ... ");
         system("pause");
     }
-   /* env->idEnvio = 0;
-    strcpy(env->nombreProd, "");
-    env->idCamion = 0;
-    strcpy(env->zonaDestino, "");
-    env->kmRecorrido = 0;
-    env->tipoEntrega = 0;
-    env->costoEnvio = 0;*/
 
     return env;
 }

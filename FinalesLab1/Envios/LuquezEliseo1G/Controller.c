@@ -121,6 +121,46 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEnvio)
     return ret;
 }
 
+/** \brief Guarda los datos de los empleados en el archivo data.csv (modo binario).
+ *
+ * \param path char*
+ * \param pArrayListEnvio LinkedList*
+ * \return int
+ *
+ */
+int controller_saveAsBinary(char* path , LinkedList* pArrayListEnvio)
+{
+    int ret;
+    ret = RETURN_ERROR;
+    FILE* pFile;
+    pFile = fopen(path, "wb");
+    Envio* env;
+
+    if(ll_len(pArrayListEnvio)!= 0)
+    {
+        if(pArrayListEnvio != NULL)
+        {
+            for(int i = 0; i<ll_len(pArrayListEnvio);i++)
+            {
+                env = (Envio*)ll_get(pArrayListEnvio, i);
+                fwrite(env, sizeof(Envio*), 1, pFile);
+            }
+            fclose(pFile);
+            ret = RETURN_OK;
+        }
+        else
+        {
+            printf("No hay Archivo\n");
+            system("pause");
+        }
+     }
+     else
+     {
+         printf("No hay Datos\n");
+     }
+
+    return ret;
+}
 
 
 

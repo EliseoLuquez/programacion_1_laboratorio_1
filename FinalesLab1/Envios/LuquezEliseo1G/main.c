@@ -50,9 +50,9 @@ int main()
                 controller_saveAsText(pathArch2, eEnvioZona);
                 break;
             case 5:
-             //   printf("\nIngrese Nombre de Archivo bin segun Nivel elegido: ");
-             //   scanf("%s", pathArchbin);
-              //  controller_saveAsBinary(pathArchbin, eVendedorNivel);
+                printf("\nIngrese Nombre de Archivo bin segun Nivel elegido: ");
+                scanf("%s", pathArchbin);
+                controller_saveAsBinary(pathArchbin, eEnvioZona);
                 controller_ListEnvio(eEnvioZona);
                 break;
             case 6:
