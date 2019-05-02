@@ -17,8 +17,9 @@ int menuSort();
 int main()
 {
     int option = 0;
-    LinkedList* eEmployee = ll_newLinkedList();
-    //LinkedList* eEnvioZona = ll_newLinkedList();
+    LinkedList* pArrayListEmployee = ll_newLinkedList();
+    LinkedList* pArrayListFichaje = ll_newLinkedList();
+    LinkedList* pArrayListFilter = ll_newLinkedList();
     char pathArch[20];
     char pathArch2[20];
     char pathArchbin[20];
@@ -30,22 +31,24 @@ int main()
         {
             case 1:
                 system("cls");
+                controller_loadFromText("empleados.csv" ,pArrayListEmployee);
+                controller_loadFromTextFichajes("fichajes.csv", pArrayListFichaje);
                 //printf("\nIngrese Nombre de Archivo a cargar: ");
                 //scanf("%s", pathArch);
 
-                controller_addEmployee(eEmployee);
+                //controller_addEmployee(pArrayListEmployee);
                 break;
             case 2:
-                controller_editEmployee(eEmployee);
-                //controller_ListEmployee(eEmployee);
+                controller_editEmployee(pArrayListEmployee);
+                //controller_ListEmployee(pArrayListEmployee);
                 break;
-            case 3:controller_removeEmployee(eEmployee);
+            case 3:controller_removeEmployee(pArrayListEmployee);
                 //ll_map(eEnvio, envio_loadCosto);
                 //controller_ListEnvio(eEnvio);
                 break;
             case 4:
                 system("cls");
-                controller_ListEmployee(eEmployee);
+                controller_listEmployee(pArrayListEmployee);
                // eEnvioZona =  ll_filter(eEnvio, envio_zonas);
                 system("cls");
                // printf("\nIngrese Nombre de Archivo zona: ");
@@ -53,15 +56,18 @@ int main()
                // controller_saveAsText(pathArch2, eEnvioZona);
                 break;
             case 5:
-                controller_loadFromText("empleados.csv" ,eEmployee);
-
+                //controller_addFichaje(pArrayListEmployee, pArrayListFichaje);
+                controller_listFichajes(pArrayListFichaje);
                // controller_saveAsBinary(pathArchbin, eEnvioZona);
                 //controller_ListEnvio(eEnvioZona);
                 break;
             case 6:
+                controller_filterForFecha(pArrayListEmployee, pArrayListFichaje, pArrayListFilter);
+                break;
+            case 7:
                 break;
         }
-    }while(option != 6);
+    }while(option != 7);
     return 0;
 }
 
@@ -78,7 +84,8 @@ int menuPpal()
         printf("  3. Baja Empleado                                                           \n");
         printf("  4. Listar Empleados                                                        \n");
         printf("  5. Fichajes Empleados                                                      \n");
-        printf("  6. Salir                                                                   \n");
+        printf("  6. Listar Fichajes por fecha                                               \n");
+        printf("  7. Salir                                                                   \n");
         printf(" \n");
         scanf("%d", &r);
     }
@@ -97,13 +104,14 @@ int menuEdit()
         printf("***********************************\n");
         printf("     Seleccione un campo a editar: \n");
         printf("     1. Nombre.                    \n");
-        printf("     2. Horas Trabajadas.          \n");
-        printf("     3. Sueldo                     \n");
-        printf("     4. Salir                      \n");
+        printf("     2. Apellido                   \n");
+        printf("     2. Dni                        \n");
+        printf("     4. Clave                      \n");
+        printf("     5. Modificar Todos            \n");
         printf("***********************************\n");
         scanf("%d", &r);
     }
-    while(r < 1 || r > 4);
+    while(r < 1 || r > 6);
 
     return r;
 }

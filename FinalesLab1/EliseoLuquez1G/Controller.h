@@ -1,7 +1,11 @@
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee);
-int controller_ListEmployee(LinkedList* pArrayListEmployee);
+int controller_listEmployee(LinkedList* pArrayListEmployee);
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee);
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee);
 int controller_removeEmployee(LinkedList* pArrayListEmployee);
 int controller_editEmployee(LinkedList* pArrayListEmployee);
 int controller_addEmployee(LinkedList* pArrayListEmployee);
+int controller_addFichaje(LinkedList* pArrayListEmployee, LinkedList* pArrayFichaje);
+int controller_filterForFecha(LinkedList* pArrayListEmployee, LinkedList* pArrayListFichaje, LinkedList* pArrayListFilter);
+int controller_listFichajes(LinkedList* pArrayListFichaje);
+int controller_loadFromTextFichajes(char* path , LinkedList* pArrayListFichaje);

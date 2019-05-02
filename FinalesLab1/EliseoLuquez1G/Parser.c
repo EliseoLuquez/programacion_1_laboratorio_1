@@ -19,13 +19,14 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayList)
     ret = RETURN_ERROR;
     int cant = 0;
     char idStr[6];
-    char nombreStr[20];
-    char apellidoStr[6];
+    char nombreStr[50];
+    char apellidoStr[50];
     char dniStr[20];
     char claveStr[20];
 
     if(pFile != NULL)
     {
+        fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,\n]\n", idStr, nombreStr, apellidoStr, dniStr, claveStr);
         while(!feof(pFile))
         {
             cant = fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,\n]\n", idStr, nombreStr, apellidoStr, dniStr, claveStr);
@@ -46,13 +47,78 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayList)
     }
     else
     {
-        printf("Arvhivo hay datos\n\n");
+        printf("Arvhivo sin datos\n\n");
         system("pause");
     }
 
     return ret;
 }
 
+
+/** \brief Parsea los datos los datos de los envios desde el archivo data.csv (modo texto).
+ *
+ * \param path char*
+ * \param pArrayList LinkedList*
+ * \return int
+ *
+ */
+int parser_fichajeFromText(FILE* pFile , LinkedList* pArrayListFichaje)
+{
+    int ret;
+    ret = RETURN_ERROR;
+    int cant = 0;
+    char idFichStr[10];
+    char idEmpStr[10];
+    char minStr[20];
+    char hrStr[20];
+    char diaStr[20];
+    char mesStr[20];
+    char anioStr[20];
+    char inOutStr[20];
+    int hr;
+    int min;
+    int dia;
+    int mes;
+    int anio;
+    if(pFile != NULL)
+    {
+        fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,\n]\n", idFichStr, idEmpStr, hrStr, minStr, diaStr, mesStr, anioStr, inOutStr);
+        while(!feof(pFile))
+        {
+            cant = fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,\n]\n", idFichStr, idEmpStr, hrStr, minStr, diaStr, mesStr, anioStr,
+                           inOutStr);
+            if(cant != 8)
+            {
+                printf("Error al cargar Arvhivo\n\n");
+                system("pause");
+            }
+            else
+            {
+                sFichaje* pFichaje;
+                sFecha* pFecha;
+                hr = atoi(hrStr);
+                min = atoi(minStr);
+                dia = atoi(diaStr);
+                mes = atoi(mesStr);
+                anio = atoi(anioStr);
+                pFecha = fecha_newParameteros(hr, min, dia, mes, anio);
+                pFichaje = fichaje_newParametros(idFichStr, idEmpStr, inOutStr, pFecha);
+                printf("%d %d %d", pFecha->dia, pFecha->mes, pFecha->anio);
+                ll_add(pArrayListFichaje, pFichaje);
+                system("pause");
+            }
+        }
+    fclose(pFile);
+    RETURN_OK;
+    }
+    else
+    {
+        printf("Arvhivo sin datos\n\n");
+        system("pause");
+    }
+
+    return ret;
+}
 /** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo binario).
  *
  * \param path char*

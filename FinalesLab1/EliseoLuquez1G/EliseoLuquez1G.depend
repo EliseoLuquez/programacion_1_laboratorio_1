@@ -44,3 +44,103 @@
 	"LinkedList.h"
 	"Empleado.h"
 
+1556760314 source:c:\users\eli\documents\utn\finaleslab1\eliseoluquez1g\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Empleado.h"
+
+1556759993 c:\users\eli\documents\utn\finaleslab1\eliseoluquez1g\empleado.h
+
+1556648437 c:\users\eli\documents\utn\finaleslab1\eliseoluquez1g\fichajes.h
+
+1556720896 source:c:\users\eli\documents\utn\finaleslab1\eliseoluquez1g\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1550787616 c:\users\eli\documents\utn\finaleslab1\eliseoluquez1g\linkedlist.h
+
+1556757922 source:c:\users\eli\documents\utn\finaleslab1\eliseoluquez1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Empleado.h"
+	"Parser.h"
+
+1556754993 c:\users\eli\documents\utn\finaleslab1\eliseoluquez1g\controller.h
+
+1556755037 c:\users\eli\documents\utn\finaleslab1\eliseoluquez1g\parser.h
+
+1556755309 source:c:\users\eli\documents\utn\finaleslab1\eliseoluquez1g\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1556759504 source:c:\users\eli\documents\utn\finaleslab1\eliseoluquez1g\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Empleado.h"
+	"Parser.h"
+
+1556648437 source:c:\users\eli\documents\utn\finaleslab1\eliseoluquez1g\fichajes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Fichajes.h"
+
+1556830714 source:e:\finaleslab1\fichaje\eliseoluquez1g\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Empleado.h"
+	"Parser.h"
+
+1550787616 e:\finaleslab1\fichaje\eliseoluquez1g\linkedlist.h
+
+1556754994 e:\finaleslab1\fichaje\eliseoluquez1g\controller.h
+
+1556759994 e:\finaleslab1\fichaje\eliseoluquez1g\empleado.h
+
+1556755038 e:\finaleslab1\fichaje\eliseoluquez1g\parser.h
+
+1556829942 source:e:\finaleslab1\fichaje\eliseoluquez1g\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Empleado.h"
+
+1556720898 source:e:\finaleslab1\fichaje\eliseoluquez1g\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1556757924 source:e:\finaleslab1\fichaje\eliseoluquez1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Empleado.h"
+	"Parser.h"
+
+1556830748 source:e:\finaleslab1\fichaje\eliseoluquez1g\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+

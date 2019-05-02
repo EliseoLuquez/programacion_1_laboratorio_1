@@ -2,6 +2,16 @@
 #define employee_H_INCLUDED
 typedef struct
 {
+    int hora;
+    int minutos;
+    int dia;
+    int mes;
+    int anio;
+
+}sFecha;
+
+typedef struct
+{
     int id;
     char nombre[50];
     char apellido[50];
@@ -9,6 +19,14 @@ typedef struct
     char clave[20];
     int isEmpty;
 }Employee;
+
+typedef struct
+{
+    int idFichaje;
+    int idEmployee;
+    sFecha fecha;
+    char inOut[10];
+}sFichaje;
 
 Employee* employee_new();
 Employee* employee_newParametros(char* idStr, char* nombreStr, char* apellidoStr, char* dniStr, char* claveStr);
@@ -39,5 +57,36 @@ int employee_sortByHsTrabajadas(void* empleadoA, void* empleadoB);
 int employee_sortBySueldo(void* empleadoA, void* empleadoB);
 int employee_loadSueldo(void* empleado);
 
+
+
+/** FECHA **/
+
+sFecha* fecha_new();
+int fecha_newParameteros(int hora, int minutos, int dia, int mes, int anio);
+int fecha_setHora(sFecha* this, int hora);
+int fecha_getHora(sFecha* this);
+int fecha_setMinutos(sFecha* this, int minutos);
+int fecha_getMinutos(sFecha* this);
+int fecha_setDia(sFecha* this, int dia);
+int fecha_getDia(sFecha* this);
+int fecha_setMes(sFecha* this, int mes);
+int fecha_getMes(sFecha* this);
+int fecha_setAnio(sFecha* this, int anio);
+int fecha_getAnio(sFecha* this);
+
+/** FICHAJE **/
+
+sFichaje* fichaje_new();
+sFichaje* fichaje_newParametros(char* idFichajeStr, char* idEmployeeStr, char* inOut, sFecha* fecha);
+int fichaje_setIdFichaje(sFichaje* this,int idFichaje);
+int fichaje_getIdFichaje(sFichaje* this, int* idFichaje);
+int fichaje_getIdFichajes(sFichaje* this);
+int fichaje_setIdEmployee(sFichaje* this,int idEmployee);
+int fichaje_getIdEmployee(sFichaje* this, int* idEmployee);
+int fichaje_getIdEmpployees(sFichaje* this);
+int fichaje_setInOut(sFichaje* this, char* inOut);
+char* fichaje_getInOut(sFichaje* this);
+void  fichaje_showFichaje(sFichaje* this);
+void  fichaje_showFichajes(sFichaje* this);
 #endif // employee_H_INCLUDED
 

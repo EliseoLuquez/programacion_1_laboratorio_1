@@ -119,7 +119,7 @@ int employee_getDni(Employee* this)
     int ret;
     if(this != NULL)
     {
-        ret = this->id;
+        ret = this->dni;
     }
     return ret;
 }
@@ -146,8 +146,8 @@ void  employee_showEmployee(Employee* this)
 {
     if(this != NULL )
     {
-        printf(" %4d  %10s  %10s  %10d   %10s\n\n " , employee_getId(this), employee_getNombre(this),
-                 employee_getApellido(this),employee_getDni(this), employee_getClave(this));
+        printf("%d  %15s  %s  %d   %s\n\n " , employee_getId(this), employee_getNombre(this),
+                 employee_getApellido(this), employee_getDni(this), employee_getClave(this));
     }
 }
 
@@ -198,6 +198,8 @@ int employee_sortById(void* empleadoA, void* empleadoB)
     return ret;
 
 }
+
+
 /*
 int employee_sortByHsTrabajadas(void* empleadoA, void* empleadoB)
 {
@@ -273,4 +275,261 @@ void initEmployee(Employee* list, int len)
     }
 }
 */
+
+/** FICHAJES Y FECHA **/
+/** FUNCIONES FECHA  **/
+sFecha* fecha_new()
+{
+    sFecha* fecha = (sFecha *) calloc ( 1 , sizeof (sFecha));
+    if(fecha == NULL)
+    {
+        printf("No se pudo encontrar el espacio para liberar o reiniciar el programa ... ");
+        system("pause");
+    }
+
+    return fecha;
+}
+
+int fecha_newParameteros(int hora, int minutos, int dia, int mes, int anio)
+{
+    sFecha* fecha = fecha_new();
+    fecha_setHora(fecha, hora);
+    fecha_setMinutos(fecha, minutos);
+    fecha_setDia(fecha, dia);
+    fecha_setMes(fecha, mes);
+    fecha_setAnio(fecha, anio);
+    return fecha;
+}
+
+int fecha_setHora(sFecha* this, int hora)
+{
+    int ret;
+    ret = RETURN_ERROR;
+
+    if(hora > 0 && this != NULL)
+    {
+        this->hora = hora;
+        ret = RETURN_OK;
+    }
+    return ret;
+}
+
+int fecha_getHora(sFecha* this)
+{
+    return this->hora;
+}
+
+int fecha_setMinutos(sFecha* this, int minutos)
+{
+    int ret;
+    ret = RETURN_ERROR;
+
+    if(minutos > 0 && this != NULL)
+    {
+        this->minutos = minutos;
+        ret = RETURN_OK;
+    }
+    return ret;
+}
+
+int fecha_getMinutos(sFecha* this)
+{
+    return this->minutos;
+}
+
+int fecha_setDia(sFecha* this, int dia)
+{
+    int ret;
+    ret = RETURN_ERROR;
+
+    if(dia > 0 && this != NULL)
+    {
+        this->dia = dia;
+        ret = RETURN_OK;
+    }
+    return ret;
+}
+
+int fecha_getDia(sFecha* this)
+{
+    return this->dia;
+}
+
+int fecha_setMes(sFecha* this, int mes)
+{
+    int ret;
+    ret = RETURN_ERROR;
+
+    if(mes > 0 && this != NULL)
+    {
+        this->mes = mes;
+        ret = RETURN_OK;
+    }
+    return ret;
+}
+
+int fecha_getMes(sFecha* this)
+{
+    return this->mes;
+}
+
+int fecha_setAnio(sFecha* this, int anio)
+{
+    int ret;
+    ret = RETURN_ERROR;
+
+    if(anio > 0 && this != NULL)
+    {
+        this->anio = anio;
+        ret = RETURN_OK;
+    }
+    return ret;
+}
+
+int fecha_getAnio(sFecha* this)
+{
+    return this->anio;
+}
+/** FUNCIONES FICHAJE  **/
+sFichaje* fichaje_new()
+{
+    sFichaje* fich = (sFichaje *) calloc ( 1 , sizeof (sFichaje));
+    if(fich == NULL)
+    {
+        printf("No se pudo encontrar el espacio para liberar o reiniciar el programa ... ");
+        system("pause");
+    }
+
+    return fich;
+}
+
+
+sFichaje* fichaje_newParametros(char* idFichajeStr, char* idEmployeeStr, char* inOut, sFecha* fecha)
+{
+    sFichaje* pFich = fichaje_new();
+    int idFich;
+    int idEmp;
+    idFich = atoi(idFichajeStr);
+    idEmp = atoi(idEmployeeStr);
+    fichaje_setIdFichaje(pFich, idFich);
+    fichaje_setIdEmployee(pFich, idEmp);
+    fichaje_setInOut(pFich, inOut);
+    fecha_newParameteros(&fecha->hora, &fecha->minutos, &fecha->dia, &fecha->mes, &fecha->anio);
+
+
+
+    return pFich;
+}
+
+int fichaje_setIdFichaje(sFichaje* this, int idFichaje)
+{
+    int ret;
+    ret = RETURN_ERROR;
+
+    if(idFichaje > 0 && this != NULL)
+    {
+        this->idFichaje = idFichaje;
+        ret = RETURN_OK;
+    }
+    return ret;
+}
+
+int fichaje_getIdFichaje(sFichaje* this, int* idFichaje)
+{
+    int ret;
+    ret = RETURN_ERROR;
+
+    if(idFichaje > 0 && this != NULL)
+    {
+        *idFichaje = this->idFichaje;
+        ret = RETURN_OK;
+    }
+    return ret;
+}
+
+int fichaje_getIdFichajes(sFichaje* this)
+{
+    return this->idFichaje;
+}
+
+int fichaje_setIdEmployee(sFichaje* this, int idEmployee)
+{
+    int ret;
+    ret = RETURN_ERROR;
+
+    if(idEmployee > 0 && this != NULL)
+    {
+        this->idEmployee = idEmployee;
+        ret = RETURN_OK;
+    }
+    return ret;
+}
+
+int fichaje_getIdEmployee(sFichaje* this, int* idEmployee)
+{
+    int ret;
+    ret = RETURN_ERROR;
+
+    if(idEmployee > 0 && this != NULL)
+    {
+        *idEmployee = this->idEmployee;
+        ret = RETURN_OK;
+    }
+    return ret;
+}
+
+int fichaje_getIdEmpployees(sFichaje* this)
+{
+    return this->idEmployee;
+}
+
+
+int fichaje_setInOut(sFichaje* this, char* inOut)
+{
+    int ret;
+    ret = RETURN_ERROR;
+    if(this != NULL)
+    {
+        strcpy(this->inOut, inOut);
+        ret = RETURN_OK;
+    }
+
+    return ret;
+}
+
+char* fichaje_getInOut(sFichaje* this)
+{
+    return this->inOut;
+}
+
+void  fichaje_showFichaje(sFichaje* this)
+{
+    if(this != NULL )
+    {
+        printf("%d %d %d %d %2d %2d %4d %s\n\n " , fichaje_getIdFichajes(this), fichaje_getIdEmpployees(this),
+                fecha_getHora(this), fecha_getMinutos(this), fecha_getDia(this), fecha_getMes(this),
+               fecha_getAnio(this), fichaje_getInOut(this));
+    }
+}
+
+void  fichaje_showFichajes(sFichaje* this)
+{
+    sFichaje* pFich;
+    int len;
+    len = ll_len(this);
+    if(this != NULL )
+    {
+        for(int i=0; i<len;i++)
+        {
+            pFich = (sFichaje*)ll_get(this, i);
+            fichaje_showFichaje(pFich);
+        }
+    }
+    else
+    {
+        printf("No hay envios cargados\n\n");
+        system("pause");
+    }
+
+}
 

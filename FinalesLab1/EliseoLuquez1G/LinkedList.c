@@ -4,6 +4,7 @@
 #include "LinkedList.h"
 #include "Empleado.h"
 
+
 static Node* getNode(LinkedList* this, int nodeIndex);
 static int addNode(LinkedList* this, int nodeIndex,void* pElement);
 
@@ -691,23 +692,31 @@ float ll_map(LinkedList* this, float (*pFunc)(void*))
 }
 
 
-LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void* envios, char* zona))
+LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void* empleado, void* fecha))
 {
     LinkedList* filterList;
     int filterRet;
     void* pElement;
-    char* zona[50];
+    char* dia[50];
+    char* mes[50];
+    char* anio[50];
 
     filterList = ll_newLinkedList();
     if(filterList != NULL)
     {
-        printf("\nIngrese Zona: ");
-        scanf("%s", zona);
+        printf("Ingrese Dia: ");
+        scanf("%s", );
+
+        printf("Ingrese Mes: ");
+        scanf("%s", mes);
+
+        printf("Ingrese Anio: ");
+        scanf("%s", anio);
         for(int i = 0; i < ll_len(this);i++)
         {
            pElement = ll_get(this, i);
            //printf("%s",pElement);
-           filterRet = pFunc(pElement, zona);
+           filterRet = pFunc(pElement, fecha);
            if(filterRet == 0)
            {
                ll_add(filterList, pElement);
