@@ -1,0 +1,110 @@
+# depslib dependency file v1.0
+1554059672 source:c:\users\eli\documents\utn\pintura\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Componente.h"
+	"Color.h"
+
+1554059705 c:\users\eli\documents\utn\pintura\linkedlist.h
+
+1554063123 c:\users\eli\documents\utn\pintura\componente.h
+
+1556391887 c:\users\eli\documents\utn\pintura\color.h
+
+1556369379 source:c:\users\eli\documents\utn\pintura\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Color.h"
+	"Componente.h"
+
+1554062940 source:c:\users\eli\documents\utn\pintura\componente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Color.h"
+	"Componente.h"
+
+1554059594 c:\users\eli\documents\utn\pintura\controller.h
+
+1556396570 source:c:\users\eli\documents\utn\pintura\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Color.h"
+	"Componente.h"
+	"Parser.h"
+
+1553972560 c:\users\eli\documents\utn\pintura\parser.h
+
+1556396570 source:c:\users\eli\documents\utn\pintura\color.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Color.h"
+	"Componente.h"
+
+1556396570 source:c:\users\eli\documents\utn\pintura\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Parser.h"
+	"Color.h"
+	"Componente.h"
+
+1556396570 source:c:\users\eli\documents\utn\finaleslab1\pintura\color.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Color.h"
+	"Componente.h"
+
+1554059705 c:\users\eli\documents\utn\finaleslab1\pintura\linkedlist.h
+
+1554059594 c:\users\eli\documents\utn\finaleslab1\pintura\controller.h
+
+1556391887 c:\users\eli\documents\utn\finaleslab1\pintura\color.h
+
+1554063123 c:\users\eli\documents\utn\finaleslab1\pintura\componente.h
+
+1554059672 source:c:\users\eli\documents\utn\finaleslab1\pintura\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Componente.h"
+	"Color.h"
+
+1556396570 source:c:\users\eli\documents\utn\finaleslab1\pintura\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Color.h"
+	"Componente.h"
+	"Parser.h"
+
+1553972560 c:\users\eli\documents\utn\finaleslab1\pintura\parser.h
+
+1556369379 source:c:\users\eli\documents\utn\finaleslab1\pintura\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Color.h"
+	"Componente.h"
+
