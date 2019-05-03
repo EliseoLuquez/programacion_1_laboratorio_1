@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1556840364 source:d:\luquez\luquez.eliseo.1g\cliente.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"Cliente.h"
+
+1556839642 d:\luquez\luquez.eliseo.1g\cliente.h
+
+1556840937 source:d:\luquez\luquez.eliseo.1g\controller.c
+	<stdio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Cliente.h"
+
+1556838401 d:\luquez\luquez.eliseo.1g\linkedlist.h
+
+1556840489 d:\luquez\luquez.eliseo.1g\controller.h
+
+1556840131 source:d:\luquez\luquez.eliseo.1g\linkedlist.c
+	<stdio.h>
+	"LinkedList.h"
+	"Cliente.h"
+
+1556840683 source:d:\luquez\luquez.eliseo.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Cliente.h"
+	"Parser.h"
+
+1556840315 d:\luquez\luquez.eliseo.1g\parser.h
+
+1556841018 source:d:\luquez\luquez.eliseo.1g\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Cliente.h"
+

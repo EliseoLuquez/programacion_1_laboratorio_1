@@ -1,0 +1,4 @@
+idCliente,nombre,apellido,cuit
+1,juan,perez,20343726571
+2,Agustin,Diaz,23343726572
+3,Gonzalo,Martin,20333427553
