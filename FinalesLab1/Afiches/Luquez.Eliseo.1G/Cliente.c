@@ -134,7 +134,7 @@ void  cliente_showCliente(sCliente* this)
 {
     if(this != NULL )
     {
-        printf ("%4d  %s  %d  %d \n\n " , this->id , this->nombre , this->apellido , this->cuit);
+        printf ("%4d  %s  %s  %s \n\n " , (sCliente*)this->id , (sCliente*)this->nombre , (sCliente*)this->apellido , (sCliente*)this->cuit);
     }
 }
 
@@ -408,17 +408,18 @@ int venta_getEstado(sVenta* this,char* estado)
     return ret;
 }
 
-/*
 
-void  cliente_showCliente(sVenta* this)
+
+void  venta_showVenta(sVenta* this)
 {
     if(this != NULL )
     {
-        printf ( " %4d  %s  %d  %d \n\n " , this->idCliente , this->nombre , this->apellido , this->cuit);
+        printf ("%d  %4d  %4d  %10s  %10s  %10s\n", (sVenta*)this->idVenta ,(sVenta*)this->idCliente , (sVenta*)this->cantAfiches , (sVenta*)this->nombreArchImg,
+                (sVenta*)this->zona, (sVenta*)this->estado);
     }
 }
 
-void  venta_showClientes(sVenta* this)
+void  venta_showVentas(sVenta* this)
 {
     sVenta* pVenta;
 
@@ -427,7 +428,7 @@ void  venta_showClientes(sVenta* this)
         for(int i=0; i<ll_len(this);i++)
         {
             pVenta = (sVenta*)ll_get(this, i);
-            cliente_showCliente(pVenta);
+            venta_showVenta(pVenta);
         }
     }
     else
@@ -437,4 +438,4 @@ void  venta_showClientes(sVenta* this)
     }
 
 }
-*/
+

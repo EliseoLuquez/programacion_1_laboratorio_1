@@ -10,3 +10,5 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee);
 int controller_addVenta(LinkedList* pArrayListVenta);
 int controller_loadVentaFromText(char* path , LinkedList* pArrayListVenta);
 
+int controller_ListVentas(LinkedList* pArrayList);
+int controller_cobrarVenta(LinkedList* pArrayListCliente, LinkedList* pArrayListVenta);

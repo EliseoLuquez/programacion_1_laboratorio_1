@@ -18,7 +18,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayCliente)
     int ret;
     ret = RETURN_ERROR;
 
-    FILE* pFile = fopen("cliente.txt", "r");
+    FILE* pFile = fopen(path, "r");
     if(pFile != NULL)
     {
         ret = parser_clienteFromText(pFile, pArrayCliente);
@@ -38,7 +38,7 @@ int controller_loadVentaFromText(char* path , LinkedList* pArrayListVenta)
     int ret;
     ret = RETURN_ERROR;
 
-    FILE* pFile = fopen("venta.txt", "r");
+    FILE* pFile = fopen(path, "r");
     if(pFile != NULL)
     {
         ret = parser_ventaFromText(pFile, pArrayListVenta);
@@ -490,3 +490,99 @@ int controller_addVenta(LinkedList* pArrayListVenta)
     return ret;
 }
 
+/** \brief Listar empleados
+ *
+ * \param path char*
+ * \param pArrayCliente LinkedList*
+ * \return int
+ *
+ */
+int controller_ListVentas(LinkedList* pArrayList)
+{
+    int idAux;
+    int ret;
+    ret = RETURN_ERROR;
+    int len;
+    len = ll_len(pArrayList);
+
+    if(pArrayList != NULL)
+    {
+        if(len != 0)
+        {
+            system("cls");
+            printf("IDV  IDC   Cant     Img        Zona         Estado\n\n");
+            for(int i = 0; i < len; i++)
+            {
+                venta_showVentas(pArrayList);
+                ret = RETURN_OK;
+                break;
+            }
+            system("pause");
+        }
+        else
+        {
+            printf("No hay datos\n\n");
+            system("pause");
+        }
+    }
+    return ret;
+}
+
+int controller_cobrarVenta(LinkedList* pArrayListCliente, LinkedList* pArrayListVenta)
+{
+    int idVentaAux;
+    int idClienteAux;
+    int respuesta;
+    int lenCliente;
+    int lenVenta;
+    int listFilter;
+    int ret;
+    char cobrado[10] = "cobrado";
+    ret = RETURN_ERROR;
+
+    sCliente* pCliente;
+    sVenta* pVenta;
+
+    controller_ListVentas(pArrayListVenta);
+    printf("Ingrese ID venta: ");
+    scanf("%d", &idVentaAux);
+
+    lenCliente = ll_len(pArrayListCliente);
+    lenVenta = ll_len(pArrayListVenta);
+    for(int i = 0; i < lenVenta; i++)
+    {
+        pVenta = ll_get(pArrayListVenta, i);
+        //printf("%d\n", idVentaAux);
+        //printf("%d",pVenta->idCliente);
+        if((pVenta->idVenta == idVentaAux))
+        {
+            idClienteAux = pVenta->idCliente;
+            for(int j = 0; j < lenCliente; j++)
+            {
+                pCliente = ll_get(pArrayListCliente, j);
+                if(pCliente->id == idClienteAux)
+                {
+                    cliente_showCliente(pCliente);
+                    printf("\nConfima cambio de estado a Cobrada? 1/0");
+                    scanf("%d", &respuesta);
+                    if(respuesta)
+                    {
+                        //pVenta->estado = cobrado;
+                        venta_setEstado(pVenta, "cobrado");
+                        ret = RETURN_OK;
+                        break;
+                    }
+                }
+            }
+        }
+        else
+        {
+            printf("No existe id");
+            break;
+        }
+    }
+    controller_ListVentas(pArrayListVenta);
+
+    return ret;
+
+}

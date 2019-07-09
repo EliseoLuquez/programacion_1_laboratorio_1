@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1562688456 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\foto\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Venta.h"
+	"Parser.h"
+
+1562533962 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\foto\linkedlist.h
+
+1562523312 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\foto\controller.h
+
+1562536941 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\foto\venta.h
+
+1562518750 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\foto\parser.h
+
+1562687792 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\foto\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Venta.h"
+
+1562525937 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\foto\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Venta.h"
+	"Parser.h"
+
+1562688203 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\foto\venta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Venta.h"
+	"Validaciones.h"
+
+1562534864 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\foto\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Venta.h"
+	"Parser.h"
+
+1562528744 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\foto\validaciones.h
+
+1562530528 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\foto\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+

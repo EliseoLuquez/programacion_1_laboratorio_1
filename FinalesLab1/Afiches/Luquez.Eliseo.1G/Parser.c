@@ -32,8 +32,9 @@ int parser_ventaFromText(FILE* pFile, LinkedList* pArrayList)
             cant = fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,\n]\n", idVentaStr, idClienteStr, CantAfichesStr, nombreImgStr, zonaStr, estadoStr);
             if(cant != 6)
             {
-                printf("Error al cargar Arvhivo Venta\n\n");
+                printf("Error al cargar Arvhivo\n\n");
                 system("pause");
+                break;
             }
             else
             {

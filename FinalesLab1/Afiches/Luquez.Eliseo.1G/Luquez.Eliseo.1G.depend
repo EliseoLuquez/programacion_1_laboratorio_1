@@ -40,3 +40,44 @@
 	"LinkedList.h"
 	"Cliente.h"
 
+1562695676 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\afiches\luquez.eliseo.1g\cliente.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"Cliente.h"
+
+1562694588 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\afiches\luquez.eliseo.1g\cliente.h
+
+1562697771 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\afiches\luquez.eliseo.1g\controller.c
+	<stdio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Cliente.h"
+
+1562690626 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\afiches\luquez.eliseo.1g\linkedlist.h
+
+1562696912 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\afiches\luquez.eliseo.1g\controller.h
+
+1562690626 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\afiches\luquez.eliseo.1g\linkedlist.c
+	<stdio.h>
+	"LinkedList.h"
+	"Cliente.h"
+
+1562697073 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\afiches\luquez.eliseo.1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Cliente.h"
+	"Parser.h"
+
+1562690626 c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\afiches\luquez.eliseo.1g\parser.h
+
+1562695227 source:c:\users\eli\documents\utn\prog1_lab1_2018\finaleslab1\afiches\luquez.eliseo.1g\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Cliente.h"
+

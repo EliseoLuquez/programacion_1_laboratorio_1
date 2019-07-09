@@ -34,6 +34,8 @@ int cliente_getCuit(sCliente* this,char* cuit);
 void  cliente_showCliente(sCliente* this);
 void  cliente_showClientes(sCliente* this);
 
+
+
 int employee_sortByName(void* empleadoA, void* empleadoB);
 int employee_sortById(void* empleadoA, void* empleadoB);
 int employee_sortByHsTrabajadas(void* empleadoA, void* empleadoB);
@@ -55,5 +57,8 @@ int venta_setZona(sVenta* this,char* zona);
 int venta_getZona(sVenta* this,char* zona);
 int venta_setEstado(sVenta* this,char* estado);
 int venta_getEstado(sVenta* this,char* estado);
+
+void  venta_showVenta(sVenta* this);
+void  venta_showVentas(sVenta* this);
 
 

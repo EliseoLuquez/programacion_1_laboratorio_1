@@ -1,4 +1,4 @@
-idCliente,cant_Afiches,nombreImg,zona,estado
-1,5,payaso,caba,a cobrar
-3,2,pelopincho,zona sur,cobrado
-2,6,tobogan,zona oeste,a cobrar
+idVenta,idCliente,cant_Afiches,nombreImg,zona,estado
+1,1,5,payaso,caba,a cobrar
+2,3,2,pelopincho,zona sur,cobrado
+3,2,6,tobogan,zona oeste,a cobrar

@@ -25,7 +25,7 @@ int main()
     char pathArchbin[20];
     //int nivel;
     controller_loadFromText("cliente.txt", pArrayListCliente);
-    controller_loadFromText("afiches.txt", pArrayListVenta);
+    controller_loadVentaFromText("afiches.txt", pArrayListVenta);
     do{
         option = menuPpal();
         switch(option)
@@ -46,7 +46,8 @@ int main()
                 //controller_ListEmployee(pArrayListEmployee);
                 break;
             case 3:
-                controller_ListCliente(pArrayListCliente);
+                //controller_ListVentas(pArrayListVenta);
+                controller_cobrarVenta(pArrayListCliente, pArrayListVenta);
                 //controller_removeEmployee(pArrayListEmployee);
                 //ll_map(eEnvio, envio_loadCosto);
                 //controller_ListEnvio(eEnvio);
