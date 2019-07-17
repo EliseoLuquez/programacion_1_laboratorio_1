@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Venta.h"
+#include "Llamada.h"
 #include "Validaciones.h"
 #define RETURN_OK 1
 #define RETURN_ERROR 0

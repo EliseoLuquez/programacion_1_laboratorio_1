@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "LinkedList.h"
-#include "Venta.h"
+#include "Llamada.h"
 #include "Parser.h"
 #define RETURN_OK 1
 #define RETURN_ERROR 0
@@ -14,43 +14,88 @@
  * \return int
  *
  */
-int parser_ventaFromText(FILE* pFile , LinkedList* pArrayList)
+int parser_fromText(FILE* pFile , LinkedList* pArrayList)
 {
     int ret;
     ret = RETURN_ERROR;
     int cant = 0;
-    char idVentaStr[50];
-    char fechaVentaStr[50];
-    char tipoFotoStr[50];
-    char cantidadStr[50];
-    char precioUnitarioStr[50];
-    char cuitClienteStr[50];
+    char idLlamadaStr[50];
+    char fechaStr[50];
+    char numeroClienteStr[50];
+    char idProblemaStr[50];
+    char solucionadoStr[50];
+
 
 
     if(pFile != NULL)
     {
-        cant = fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,\n]\n", idVentaStr, fechaVentaStr, tipoFotoStr, cantidadStr, precioUnitarioStr, cuitClienteStr);
+        cant = fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,\n]\n", idLlamadaStr, fechaStr, numeroClienteStr, idProblemaStr, solucionadoStr);
         while(!feof(pFile))
         {
-            cant = fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,\n]\n", idVentaStr, fechaVentaStr, tipoFotoStr, cantidadStr, precioUnitarioStr, cuitClienteStr);
-            if(cant != 6)
+            cant = fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,\n]\n", idLlamadaStr, fechaStr, numeroClienteStr, idProblemaStr, solucionadoStr);
+            if(cant != 5)
             {
-                printf("Error al cargar Arvhivo\n\n");
+                printf("Error al Leer Archivo\n\n");
                 system("pause");
             }
             else
             {
-                Venta* pVenta;
-                pVenta = venta_newParametros(idVentaStr, fechaVentaStr, tipoFotoStr, cantidadStr, precioUnitarioStr, cuitClienteStr);
-                ll_add(pArrayList, pVenta);
+                sLlamada* pLlamada;
+                pLlamada = llamada_newParametros(idLlamadaStr, fechaStr, numeroClienteStr, idProblemaStr, solucionadoStr);
+                ll_add(pArrayList, pLlamada);
             }
         }
     fclose(pFile);
+    printf("Arvhivo Leido Con Exito\n\n");
+    system("pause");
     RETURN_OK;
     }
     else
     {
-        printf("Arvhivo hay datos\n\n");
+        printf("Arvhivo No hay datos\n\n");
+        system("pause");
+    }
+
+    return ret;
+}
+
+int parser_fromTextProblema(FILE* pFile , LinkedList* pArrayList)
+{
+    int ret;
+    ret = RETURN_ERROR;
+    int cant = 0;
+    char idProblemaStr[50];
+    char descripcionStr[50];
+
+
+    if(pFile != NULL)
+    {
+        cant = fscanf(pFile,"%[^,]%[^,\n]\n", idProblemaStr, descripcionStr);
+        while(!feof(pFile))
+        {
+            cant = fscanf(pFile,"%[^,]%[^,\n]\n", idProblemaStr, descripcionStr);
+            printf("%d", cant);
+            if(cant != 2)
+            {
+                printf("Error al Leer Archivo\n\n");
+                system("pause");
+                break;
+            }
+            else
+            {
+                sProblema* pProblema;
+                pProblema = problema_newParametros(idProblemaStr, descripcionStr);
+                ll_add(pArrayList, pProblema);
+            }
+        }
+    fclose(pFile);
+    printf("Arvhivo Leido Con Exito\n\n");
+    system("pause");
+    RETURN_OK;
+    }
+    else
+    {
+        printf("Arvhivo No hay datos\n\n");
         system("pause");
     }
 

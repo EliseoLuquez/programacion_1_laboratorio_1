@@ -3,7 +3,7 @@
 #include <string.h>
 #include "LinkedList.h"
 #include "Controller.h"
-#include "Venta.h"
+#include "Llamada.h"
 #include "Parser.h"
 #define RETURN_OK 1
 #define RETURN_ERROR 0
@@ -17,36 +17,74 @@ int menuSort();
 int main()
 {
     int option = 0;
-    LinkedList* venta = ll_newLinkedList();
+    LinkedList* pArrayListLlamada = ll_newLinkedList();
+    LinkedList* pArrayListProblema = ll_newLinkedList();
+    LinkedList* pArrayListProblemaUno = ll_newLinkedList();
+    LinkedList* pArrayListProblemaDos = ll_newLinkedList();
+    LinkedList* pArrayListProblemaTres = ll_newLinkedList();
+    LinkedList* pArrayListProblemaCuatro = ll_newLinkedList();
+    LinkedList* pArrayListProblemaCinco = ll_newLinkedList();
+
     char path[20];
+    int rta;
     do{
         option = menuPpal();
         switch(option)
         {
             case 1:
                 system("cls");
-                controller_loadFromText("data.csv", venta);
+                //printf("\nIngrese Nombre de Archivo: ");
+                //scanf("%s", path);
+                controller_loadFromText("DATA_final1.csv", pArrayListLlamada);
+                controller_cargarProblemas(pArrayListProblema);
                 break;
             case 2:
                 system("cls");
-                controller_ListVenta(venta);
+                controller_listProblema(pArrayListLlamada, pArrayListProblema);
                 break;
             case 3:
-                controller_List(venta);
+                printf("\nIngrese Numero Problema: ");
+                scanf("%d", &rta);
+                printf("\nIngrese Nombre de Archivo: ");
+                scanf("%s", path);
+                switch(rta)
+                {
+                    case 1:
+                        pArrayListProblemaUno = ll_filter(pArrayListLlamada, llamada_filterProblemaUno);
+                       // controller_listProblema(pArrayListProblemaUno, pArrayListProblema);
+                        controller_saveAsText(path, pArrayListProblemaUno, pArrayListProblema);
+                        break;
+                    case 2:
+                        pArrayListProblemaDos = ll_filter(pArrayListLlamada, llamada_filterProblemaDos);
+                        controller_saveAsText(path, pArrayListProblemaDos, pArrayListProblema);
+                        break;
+                    case 3:
+                        pArrayListProblemaTres = ll_filter(pArrayListLlamada, llamada_filterProblemaTres);
+                        controller_saveAsText(path, pArrayListProblemaTres, pArrayListProblema);
+                        break;
+                    case 4:
+                        pArrayListProblemaCuatro = ll_filter(pArrayListLlamada, llamada_filterProblemaCuatro);
+                        controller_saveAsText(path, pArrayListProblemaCuatro, pArrayListProblema);
+                        break;
+                    case 5:
+                        pArrayListProblemaCinco = ll_filter(pArrayListLlamada, llamada_filterProblemaCinco);
+                        controller_saveAsText(path, pArrayListProblemaCinco, pArrayListProblema);
+                        break;
+                }
+               // controller_saveAsText(path, pArrayListLlamada, pArrayListProblema);
                 system("cls");
                 break;
             case 4:
                 system("cls");
-                printf("\nIngrese Nombre de Archivo: ");
-                scanf("%s", path);
-                controller_saveAsText(path, venta);
+
                 break;
             case 5:
+
                 break;
             case 6:
                 break;
         }
-    }while(option != 6);
+    }while(option != 4);
     return 0;
 }
 
@@ -57,13 +95,13 @@ int menuPpal()
     {
         system("cls");
         printf(" \n");
-        printf("  Menu:                                                                          \n");
-        printf("  1. Cargar datos                                                                \n");
-        printf("  2. Informar                                                                    \n");
-        printf("  3. Agregar tipo                                                                \n");
-        printf("  4. Generar Archivo Informe                                                     \n");
-        printf("  5. Imprimir Lisa de Zonas                                                      \n");
-        printf("  6. Salir                                                                       \n");
+        printf("  Menu:                                                   \n");
+        printf("  1. Cargar Archivo                                       \n");
+        printf("  2. Informar Llamadas                                    \n");
+        printf("  3. Generar Archivo de Llamadas                          \n");
+        printf("  4. Salir                                                    \n");
+        //printf("  5.                                                      \n");
+       // printf("  6. Salir                                                \n");
         printf(" \n");
         scanf("%d", &r);
     }

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "LinkedList.h"
-#include "Venta.h"
+#include "Llamada.h"
 
 
 static Node* getNode(LinkedList* this, int nodeIndex);
@@ -692,30 +692,22 @@ char ll_map(LinkedList* this, char* (*pFunc)(void*))
 }
 */
 
-LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void* vehiculos, char tipo))
+LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*))
 {
     LinkedList* filterList;
     int filterRet;
     void* pElement;
-    char tipoAux;
 
     filterList = ll_newLinkedList();
     if(filterList != NULL)
     {
-
-        printf("\nIngrese Tipo A(Auto) M(Moto): ");
-        scanf("%s", &tipoAux);
         for(int i = 0; i < ll_len(this);i++)
         {
            pElement = ll_get(this, i);
-           filterRet = pFunc(pElement, tipoAux);
-           if(filterRet == 0)
+           filterRet = pFunc(pElement);
+           if(filterRet == 1)
            {
                ll_add(filterList, pElement);
-           }
-           else if(filterRet == 1)
-           {
-              ll_add(filterList, pElement);
            }
         }
     }

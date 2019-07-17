@@ -35,14 +35,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Controller.h" />
-		<Unit filename="Entidad.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Entidad.h" />
 		<Unit filename="LinkedList.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="LinkedList.h" />
+		<Unit filename="Llamada.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Llamada.h" />
 		<Unit filename="Parser.c">
 			<Option compilerVar="CC" />
 		</Unit>

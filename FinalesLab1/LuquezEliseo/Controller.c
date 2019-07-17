@@ -3,37 +3,164 @@
 #include <string.h>
 #include "LinkedList.h"
 #include "Controller.h"
-#include "Venta.h"
+#include "Llamada.h"
 #include "Parser.h"
 #define RETURN_OK 1
 #define RETURN_ERROR 0
 
+int controller_cargarProblemas(LinkedList* pArrayList)
+{
+    int ret = RETURN_ERROR;
 
-int controller_List(LinkedList* pArrayList)
+    if(pArrayList != NULL)
+    {
+        for(int i = 0;i < 5; i++)
+        {
+            switch(i)
+            {
+                case 0:
+                    ll_add(pArrayList, problema_newParametros("1", "No funciona Pc"));
+                    break;
+                case 1:
+                    ll_add(pArrayList, problema_newParametros("2", "No funcion mouse"));
+                    break;
+                case 2:
+                    ll_add(pArrayList, problema_newParametros("3", "No funciona teclado"));
+                    break;
+                case 3:
+                    ll_add(pArrayList, problema_newParametros("4", "No hay internet"));
+                    break;
+                case 4:
+                    ll_add(pArrayList, problema_newParametros("5", "No funciona telefono"));
+                    break;
+            }
+        }
+        printf("Cargados con exito\n");
+        system("pause");
+        ret = RETURN_OK;
+    }
+    else
+    {
+        printf("Linkedlist null");
+        system("pause");
+    }
+    return ret;
+}
+
+int controller_list(LinkedList* pArrayList)
 {
     int ret;
     ret = RETURN_ERROR;
     int len;
-    len = ll_len(pArrayList);
+    sLlamada* pLlamada;
 
     if(pArrayList != NULL)
     {
-        if(len != 0)
+        len = ll_len(pArrayList);
+        printf("IdLl.     Fecha       Num.Cli. Id P. Sol.\n\n");
+        for(int i = 0; i < len; i++)
         {
-            printf("Id Fecha Tipo Cant. Precio Unit. Cuit\n\n");
-            for(int i = 0; i < len; i++)
+            pLlamada = ll_get(pArrayList, i);
+            if(pLlamada != NULL)
             {
-                venta_showVentas(pArrayList);
-                ret = RETURN_OK;
-                break;
+                llamada_showLlamada(pLlamada);
             }
-            system("pause");
         }
-        else
+        system("pause");
+    }
+    else
+    {
+        printf("No hay datos\n\n");
+        system("pause");
+    }
+    return ret;
+}
+
+int controller_listDescripcion(LinkedList* pArrayList)
+{
+    int ret;
+    ret = RETURN_ERROR;
+    int len;
+    sProblema* pProblema;
+
+    if(pArrayList != NULL)
+    {
+        len = ll_len(pArrayList);
+        printf("Id Descripcion\n\n");
+        for(int i = 0; i < len; i++)
         {
-            printf("No hay datos\n\n");
-            system("pause");
+            pProblema = ll_get(pArrayList, i);
+            if(pProblema != NULL)
+            {
+                problema_showProblema(pProblema);
+            }
+            else
+            {
+                printf("pProblema null");
+            }
         }
+        system("pause");
+    }
+    else
+    {
+        printf("No hay datos\n\n");
+        system("pause");
+    }
+    return ret;
+}
+
+
+int controller_obenterDescripcion(LinkedList* pArrayList, int id, char* descr)
+{
+    int ret = RETURN_ERROR;
+    int len;
+    char auxDescripcion[100];
+    int idProblema;
+    len = ll_len(pArrayList);
+    sProblema* pProblema;
+
+    for(int i = 0;i < len;i++)
+    {
+        pProblema = ll_get(pArrayList, i);
+        problema_getProblemaId(pProblema, &idProblema);
+        if(idProblema == id)
+        {
+            strcpy(descr, pProblema->descripcion);
+        }
+    }
+    return ret;
+}
+
+
+int controller_listProblema(LinkedList* pArrayList, LinkedList* pArrayListProblema)
+{
+    int ret;
+    ret = RETURN_ERROR;
+    int len;
+    int lenJ;
+    int auxIdProblema;
+    int auxProblemaId;
+    char desc[50];
+    sLlamada* pLlamada;
+    sProblema* pProblema;
+
+    if(pArrayList != NULL && pArrayListProblema != NULL)
+    {
+        len = ll_len(pArrayList);
+        printf("Id Ll.   Fecha   Num.Cli. Problema  Sol.\n\n");
+        for(int i = 0; i < len; i++)
+        {
+            pLlamada = ll_get(pArrayList, i);
+            llamada_getIdProblema(pLlamada, &auxIdProblema);
+            controller_obenterDescripcion(pArrayListProblema, auxIdProblema, desc);
+            printf("%d %15s %d %s %4s\n", pLlamada->idLlamada, pLlamada->fecha, pLlamada->numeroCliente, desc, pLlamada->solucionado);
+        }
+        system("pause");
+    }
+    else
+    {
+        printf("No hay datos\n\n");
+        system("pause");
     }
     return ret;
 }
@@ -53,7 +180,9 @@ int controller_loadFromText(char* path , LinkedList* pArrayList)
     FILE* pFile = fopen(path, "r");
     if(pFile != NULL)
     {
-        ret = parser_ventaFromText(pFile, pArrayList);
+        ret = parser_fromText(pFile, pArrayList);
+        printf("El Archivo Se Cargo Con Exito\n\n");
+        system("pause");
     }
     else
     {
@@ -64,7 +193,26 @@ int controller_loadFromText(char* path , LinkedList* pArrayList)
     return ret;
 }
 
+int controller_loadFromTextProblema(char* path , LinkedList* pArrayList)
+{
+    int ret;
+    ret = RETURN_ERROR;
 
+    FILE* pFile = fopen(path, "r");
+    if(pFile != NULL)
+    {
+        ret = parser_fromTextProblema(pFile, pArrayList);
+        printf("El Archivo Se Cargo Con Exito\n\n");
+        system("pause");
+    }
+    else
+    {
+        printf("El Archivo No Existe\n\n");
+        system("pause");
+    }
+
+    return ret;
+}
 /** \brief Listar empleados
  *
  * \param path char*
@@ -72,8 +220,8 @@ int controller_loadFromText(char* path , LinkedList* pArrayList)
  * \return int
  *
  */
-
-int controller_ListVenta(LinkedList* pArrayList)
+/*
+int controller_list(LinkedList* pArrayList)
 {
     int ret;
     ret = RETURN_ERROR;
@@ -101,7 +249,7 @@ int controller_ListVenta(LinkedList* pArrayList)
         }
     }
     return ret;
-}
+}*/
 /**int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
     int i,cant;
@@ -121,7 +269,7 @@ int controller_ListVenta(LinkedList* pArrayList)
  * \param pArrayList LinkedList*
  * \return int
  *
- */
+ *//*
 int controller_saveAsText(char* path , LinkedList* pArrayList)
 {
     int ret;
@@ -153,7 +301,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayList)
     }
 
     return ret;
-}
+}*/
 
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).
  *
@@ -161,25 +309,40 @@ int controller_saveAsText(char* path , LinkedList* pArrayList)
  * \param pArrayList LinkedList*
  * \return int
  *
- *
-int controller_saveAsText(char* path , LinkedList* pArrayList)
+ */
+int controller_saveAsText(char* path , LinkedList* pArrayList, LinkedList* pArrayListProblema)
 {
     int ret;
     ret = RETURN_ERROR;
 
     FILE* pFile;
     pFile = fopen(path, "w");
-    Employee* emp;
-
+    sLlamada* pLlamada;
+    int idLlamadaAux;
+    char auxFecha[50];
+    char auxNumeroCliente[50];
+    int auxIdProblema;
+    char auxSolucionado[10];
+    char desc[50];
 
     if(pArrayList != NULL)
     {
         for(int i = 0; i<ll_len(pArrayList);i++)
         {
-            emp = (Employee*)ll_get(pArrayList, i);
-            fprintf(pFile, "%4d  %s  %s  %d   %s   %d \n",emp->id ,emp->nombre ,emp->apellido, emp->dni, emp->clave);
+            pLlamada = (sLlamada*)ll_get(pArrayList, i);
+            if( llamada_getIdLlamada(pLlamada, &idLlamadaAux)&&
+            llamada_getFecha(pLlamada, auxFecha)&&
+            llamada_getNumeroCliente(pLlamada, &auxNumeroCliente)&&
+            llamada_getIdProblema(pLlamada, &auxIdProblema)&&
+            llamada_getSolucionado(pLlamada, auxSolucionado))
+            {
+                controller_obenterDescripcion(pArrayListProblema, auxIdProblema, desc);
+                fprintf(pFile, "%d %s %d %s %s\n", idLlamadaAux, auxFecha, auxNumeroCliente, desc, auxSolucionado);
+            }
         }
         fclose(pFile);
+        printf("Se Guardo con Exito\n");
+        system("pause");
         ret = RETURN_OK;
     }
 
